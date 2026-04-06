@@ -561,7 +561,13 @@
       z-index: 3;
       -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 32%, black 50%);
       mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 32%, black 50%);
-      filter: brightness(1.15) contrast(1.08) saturate(1.1);
+      /* Enhanced clarity: sharper contrast + richer colour */
+      filter: brightness(1.22) contrast(1.18) saturate(1.25);
+      /* GPU-accelerated compositing for smooth, stutter-free playback */
+      transform: translateZ(0);
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
     @media (max-width: 900px) {
       .hero-video-overlay { display: none; }
@@ -592,7 +598,20 @@
         inset 0 0 0 1px rgba(10, 191, 188, 0.08) !important;
     }
     .stat-card-1 { top: 30px; left: 20px; }
-    .stat-card-2 { top: 50%; right: 0; transform: translateY(-50%); }
+    /* stat-card-2 moved to hero-content — now inline below trust text */
+    .stat-card-2 {
+      position: relative !important;
+      top: auto !important; right: auto !important; bottom: auto !important; left: auto !important;
+      transform: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 18px;
+      padding: 14px 22px !important;
+      min-width: unset !important;
+    }
+    .stat-card-2 .stat-card-number { font-size: 28px; margin-bottom: 0; }
+    .stat-card-2 .stat-card-label  { font-size: 12px; margin-top: 2px; }
     .stat-card-3 { bottom: 40px; left: 40px; }
     .stat-card-number {
       font-size: 36px;
@@ -1458,17 +1477,18 @@
           <span class="hero-trust-dot"></span>
           Trusted by 50+ brands · 2M+ views generated
         </div>
+        <!-- 50+ Brands card moved here so it never overlaps the girl -->
+        <div class="stat-card glass stat-card-2" id="statCard2">
+          <div class="stat-card-number">50+</div>
+          <div class="stat-card-label">Brands Scaled</div>
+        </div>
       </div>
 
-      <!-- Right: floating stat cards -->
+      <!-- Right: floating stat cards (girl stays clear) -->
       <div class="hero-right" id="heroRight">
         <div class="stat-card glass stat-card-1" id="statCard1">
           <div class="stat-card-number">2M+</div>
           <div class="stat-card-label">Views Generated</div>
-        </div>
-        <div class="stat-card glass stat-card-2" id="statCard2">
-          <div class="stat-card-number">50+</div>
-          <div class="stat-card-label">Brands Scaled</div>
         </div>
         <div class="stat-card glass stat-card-3" id="statCard3">
           <div class="stat-card-number">98%</div>
