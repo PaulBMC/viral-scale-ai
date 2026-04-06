@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Viral Scale AI</title>
+  <meta name="description" content="Get in touch with Viral Scale AI. Book a free strategy call or send us a message.">
+  <meta property="og:title" content="Contact — Viral Scale AI">
+  <meta property="og:description" content="Get in touch with Viral Scale AI. Book a free strategy call or send us a message.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    body {
+      background-color: #f0fafa;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(10,191,188,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(10,191,188,0.05) 0%, transparent 60%);
+    }
+
+    /* ── Fluence Design System ── */
+    .word { display: inline-block; will-change: transform, opacity; }
+
+    .section-divider {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10,191,188,0.25), transparent);
+      margin: 0;
+    }
+
+    /* Hero glow blobs */
+    .hero-glow {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); pointer-events: none; z-index: 0;
+      animation: heroGlowPulse 8s ease-in-out infinite;
+    }
+    .hero-glow-1 { width: 500px; height: 500px; background: rgba(10,191,188,0.14); top: -120px; left: -80px; }
+    .hero-glow-2 { width: 350px; height: 350px; background: rgba(0,229,229,0.08); bottom: -60px; right: -60px; animation-delay: -4s; }
+    @keyframes heroGlowPulse {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(28px,-18px) scale(1.08); }
+      66% { transform: translate(-18px,14px) scale(0.95); }
+    }
+
+    /* iOS glass cards */
+    .glass:not(.glass-dark):not(.glass-teal) {
+      background: rgba(255,255,255,0.52) !important;
+      backdrop-filter: blur(24px) saturate(1.9) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.9) !important;
+      border: 1px solid rgba(255,255,255,0.75) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+    }
+
+    /* Service/Gallery/Contact card glass */
+    .service-card, .gallery-item, .contact-info-card, .faq-item, .values-card, .process-card {
+      background: rgba(255,255,255,0.52) !important;
+      backdrop-filter: blur(24px) saturate(1.9) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.9) !important;
+      border: 1px solid rgba(255,255,255,0.75) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+    }
+    .service-card:hover, .gallery-item:hover, .contact-info-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: rgba(255,255,255,0.95) !important;
+      box-shadow: 0 16px 48px rgba(10,191,188,0.16), 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+    }
+
+    /* Section backgrounds light */
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) {
+      background: transparent !important;
+      color: inherit !important;
+    }
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) h2,
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) h3,
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) p {
+      color: inherit !important;
+    }
+
+    /* Page hero must stay dark */
+    .page-hero, .service-hero {
+      background: #050D0D !important;
+      color: #ffffff !important;
+    }
+    .page-hero h1, .service-hero h1,
+    .page-hero h2, .service-hero h2,
+    .page-hero p, .service-hero p { color: #ffffff !important; }
+    .page-hero .section-label, .service-hero .section-label { color: rgba(255,255,255,0.7) !important; }
+
+    /* Stat blocks in service hero */
+    .stat-number, .hero-stat-number { color: #0ABFBC !important; }
+
+    /* Gallery filter tabs */
+    .filter-btn {
+      background: rgba(255,255,255,0.52);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.75);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 14px; font-weight: 500;
+      color: #4A5568;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.85);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(10,191,188,0.15);
+      border-color: rgba(10,191,188,0.4);
+      color: #0ABFBC;
+      box-shadow: 0 8px 24px rgba(10,191,188,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    /* Contact form glass */
+    .contact-form-wrap, form.contact-form {
+      background: rgba(255,255,255,0.52) !important;
+      backdrop-filter: blur(24px) saturate(1.9) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.9) !important;
+      border: 1px solid rgba(255,255,255,0.75) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+    }
+
+    /* GSAP reveal base */
+    .reveal-up { opacity: 0; transform: translateY(40px); }
+    .reveal-up.is-visible { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+  </style>
+</head>
+<body>
+
+  <div id="page-transition"></div>
+  <div id="page-transition-logo"><img src="assets/images/logo.png" alt="Viral Scale AI"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Viral Scale AI" height="36">
+        <span class="nav-brand-name">Viral Scale AI</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link nav-dropdown-trigger">Services <span>▾</span></a>
+          <div class="services-dropdown glass-dark">
+            <a href="services/video.html" class="dropdown-item"><div class="dropdown-icon">▶</div><div><strong>AI Video Production</strong><span>Cinematic content</span></div></a>
+            <a href="services/pets.html" class="dropdown-item"><div class="dropdown-icon">🐾</div><div><strong>Pet Content</strong><span>Heart-melting content</span></div></a>
+            <a href="services/websites.html" class="dropdown-item"><div class="dropdown-icon">🌐</div><div><strong>Website Design</strong><span>Conversion-first sites</span></div></a>
+            <a href="services/social.html" class="dropdown-item"><div class="dropdown-icon">📱</div><div><strong>Social Media</strong><span>Grow your audience</span></div></a>
+            <a href="services/branding.html" class="dropdown-item"><div class="dropdown-icon">✨</div><div><strong>Brand Identity</strong><span>Unforgettable brands</span></div></a>
+            <a href="services/ads.html" class="dropdown-item"><div class="dropdown-icon">📈</div><div><strong>Paid Ads & Growth</strong><span>Data-driven campaigns</span></div></a>
+          </div>
+        </div>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <a href="contact.html#contact-form" class="btn-primary nav-cta">Get Started →</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile-menu glass-dark" id="navMobileMenu">
+      <div class="nav-mobile-links">
+        <a href="index.html" class="nav-mobile-link">Home</a>
+        <a href="services/video.html" class="nav-mobile-link">AI Video</a>
+        <a href="services/pets.html" class="nav-mobile-link">Pet Content</a>
+        <a href="services/websites.html" class="nav-mobile-link">Websites</a>
+        <a href="services/social.html" class="nav-mobile-link">Social Media</a>
+        <a href="services/branding.html" class="nav-mobile-link">Branding</a>
+        <a href="services/ads.html" class="nav-mobile-link">Paid Ads</a>
+        <a href="gallery.html" class="nav-mobile-link">Gallery</a>
+        <a href="about.html" class="nav-mobile-link">About</a>
+        <a href="contact.html#contact-form" class="nav-mobile-link nav-mobile-cta">Get Started →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="service-hero shimmer-border" style="background:var(--bg-dark);padding:160px 0 100px;position:relative;overflow:hidden">
+      <div class="hero-canvas-bg"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-bg-glow" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(10,191,188,0.13) 0%,transparent 70%);pointer-events:none"></div>
+      <div class="container" style="position:relative;z-index:1;text-align:center">
+        <div class="section-label reveal-up">Get In Touch</div>
+        <h1 class="reveal-up" style="font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;line-height:1.1;margin:24px 0 28px">
+          <span class="word">Let's</span> <span class="word">Build</span> <span class="word">Something</span> <span class="word"><span class="text-gradient">Viral</span></span>
+        </h1>
+        <p class="reveal-up" style="font-size:1.2rem;color:rgba(255,255,255,0.7);max-width:680px;margin:0 auto 48px;line-height:1.8">Ready to scale your brand with AI-powered content? We'd love to hear from you.</p>
+        <div class="reveal-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:64px">
+          <a href="#contact-form" class="btn-primary btn-magnetic" style="font-size:1.05rem;padding:16px 36px">Start Your Project →</a>
+          <a href="gallery.html" class="btn-ghost" style="font-size:1.05rem;padding:16px 36px">View Our Work</a>
+        </div>
+        <div class="reveal-up" style="display:flex;gap:40px;justify-content:center;flex-wrap:wrap">
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC">24h</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Response Time</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC">Free</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Consultation</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="50" data-count-suffix="+">50+</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Brands Served</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC">Global</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">We Work Worldwide</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTACT SECTION -->
+    <section class="section section--pattern" id="contact-form">
+      <div class="section-glow section-glow--tl"></div>
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- LEFT: Contact info -->
+          <div class="contact-info">
+            <h2 class="section-heading" style="margin-bottom:32px">Talk to Us <span class="text-gradient">Today</span></h2>
+            <p class="section-sub" style="color:var(--text-body);margin-bottom:40px;font-size:18px;line-height:1.7">Whether you have a project in mind, a question about our services, or just want to explore what's possible — we're here.</p>
+
+            <div class="contact-info-cards">
+
+              <!-- Email card -->
+              <div class="contact-info-card glass-teal reveal-left">
+                <div class="contact-info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Email Us</div>
+                  <a href="mailto:hello@viralscale.ai" class="contact-info-value">hello@viralscale.ai</a>
+                </div>
+              </div>
+
+              <!-- Instagram card -->
+              <div class="contact-info-card glass-teal reveal-left">
+                <div class="contact-info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Instagram</div>
+                  <a href="https://instagram.com/viral.scaleai" class="contact-info-value" target="_blank" rel="noopener">@viral.scaleai</a>
+                </div>
+              </div>
+
+              <!-- Response time card -->
+              <div class="contact-info-card glass-teal reveal-left">
+                <div class="contact-info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Response Time</div>
+                  <div class="contact-info-value">Within 24 hours</div>
+                </div>
+              </div>
+
+              <!-- Location card -->
+              <div class="contact-info-card glass-teal reveal-left">
+                <div class="contact-info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Based In</div>
+                  <div class="contact-info-value">United Kingdom 🇬🇧</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Trust badges -->
+            <div style="margin-top:40px;padding:24px;background:rgba(10,191,188,0.06);border:1px solid rgba(10,191,188,0.15);border-radius:16px;">
+              <div style="font-size:13px;font-weight:600;color:var(--teal-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">What to expect</div>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li style="display:flex;align-items:center;gap:10px;color:var(--text-body);font-size:14px;">
+                  <span style="color:#0ABFBC;font-size:16px;">✓</span> Free 30-minute strategy call — no commitment
+                </li>
+                <li style="display:flex;align-items:center;gap:10px;color:var(--text-body);font-size:14px;">
+                  <span style="color:#0ABFBC;font-size:16px;">✓</span> Custom proposal delivered within 48 hours
+                </li>
+                <li style="display:flex;align-items:center;gap:10px;color:var(--text-body);font-size:14px;">
+                  <span style="color:#0ABFBC;font-size:16px;">✓</span> Dedicated account manager from day one
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- RIGHT: Contact form -->
+          <div class="contact-form glass reveal-right">
+            <h3 style="margin-bottom:8px">Send Us a Message</h3>
+            <p style="color:var(--text-body);margin-bottom:32px;font-size:14px;">Fill out the form and we'll get back to you within 24 hours.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name *</label>
+                  <input class="form-input" type="text" id="name" name="name" placeholder="e.g. Maria Santos" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="company">Company / Brand</label>
+                  <input class="form-input" type="text" id="company" name="company" placeholder="Your brand name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="hello@yourbrand.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="service">Service Interested In</label>
+                <select class="form-select" id="service" name="service">
+                  <option value="">Select a service...</option>
+                  <option value="video">AI Video Production</option>
+                  <option value="pets">Pet Content Creation</option>
+                  <option value="websites">Website Design</option>
+                  <option value="social">Social Media Management</option>
+                  <option value="branding">Brand Identity</option>
+                  <option value="ads">Paid Ads & Growth</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Your Message *</label>
+                <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-magnetic" style="width:100%;font-size:16px;justify-content:center;">Send Message →</button>
+              <p style="font-size:12px;color:var(--text-body);text-align:center;margin-top:16px;margin-bottom:0;">By submitting, you agree to our <a href="privacy.html" style="color:#0ABFBC">Privacy Policy</a></p>
+            </form>
+
+            <!-- Success state (hidden by default) -->
+            <div id="formSuccess" style="display:none;text-align:center;padding:40px 20px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:rgba(10,191,188,0.15);border:2px solid #0ABFBC;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <h3 style="margin-bottom:12px;">Message Sent!</h3>
+              <p style="color:var(--text-body);font-size:15px;">Thanks for reaching out. We'll be in touch within 24 hours. In the meantime, follow us on <a href="https://instagram.com/viral.scaleai" style="color:#0ABFBC" target="_blank" rel="noopener">@viral.scaleai</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- FAQ ACCORDION -->
+    <section class="section section--pattern" style="background:var(--bg-soft)">
+      <div class="section-glow section-glow--br"></div>
+      <div class="container" style="max-width:800px">
+        <div class="section-header text-center reveal-up">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-heading">Common <span class="text-gradient">Questions</span></h2>
+        </div>
+        <div class="faq-list" style="margin-top:48px">
+
+          <div class="faq-item glass">
+            <button class="faq-question">How long does it take to see results? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Most clients see meaningful engagement increases within 30 days. For paid ads, we typically hit positive ROAS within the first 2 weeks of optimization. Brand-building content compounds over 3–6 months.</div>
+            </div>
+          </div>
+
+          <div class="faq-item glass">
+            <button class="faq-question">Do you work with small businesses? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Absolutely. We work with solopreneurs, startups, and enterprises alike. Our AI-powered workflow means we can deliver premium-quality work at price points that make sense for businesses at every stage.</div>
+            </div>
+          </div>
+
+          <div class="faq-item glass">
+            <button class="faq-question">What makes you different from other agencies? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Three things: speed, AI integration, and transparency. We use proprietary AI pipelines to produce content 3× faster than traditional agencies, we share all performance data with you in real time, and we never use cookie-cutter templates.</div>
+            </div>
+          </div>
+
+          <div class="faq-item glass">
+            <button class="faq-question">Can I see examples of your work? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes! Check out our <a href="gallery.html" style="color:#0ABFBC">Gallery page</a> for a curated selection of recent projects. We can also share a more specific portfolio relevant to your industry during our free strategy call.</div>
+            </div>
+          </div>
+
+          <div class="faq-item glass">
+            <button class="faq-question">Do you offer custom packages? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes. While we have standard packages, most of our clients end up on custom plans tailored to their specific needs, budget, and growth goals. Book a free call and we'll build a plan that fits perfectly.</div>
+            </div>
+          </div>
+
+          <div class="faq-item glass">
+            <button class="faq-question">Do I need to sign a long-term contract? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We offer both project-based and monthly retainer arrangements. There are no lock-in contracts for monthly services — you can cancel with 30 days' notice. We believe in earning your business every month, not trapping you with contracts.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/images/logo.png" alt="Viral Scale AI" height="44"></div>
+          <p class="footer-tagline">AI-powered content & digital agency, in partnership with British Media. Making brands go viral, one piece of content at a time.</p>
+          <div class="footer-uk-badge">
+            <svg width="22" height="15" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;flex-shrink:0">
+              <rect width="60" height="40" fill="#012169"/>
+              <polygon points="0,0 8,0 30,16 52,0 60,0 60,8 38,24 60,40 52,40 30,24 8,40 0,40 0,32 22,16 0,8" fill="white"/>
+              <polygon points="0,0 3,0 30,17.5 57,0 60,0 60,3 33,20 60,40 57,40 30,22.5 3,40 0,40 0,37 27,20 0,3" fill="#C8102E"/>
+              <rect x="25" y="0" width="10" height="40" fill="white"/>
+              <rect x="0" y="15" width="60" height="10" fill="white"/>
+              <rect x="27" y="0" width="6" height="40" fill="#C8102E"/>
+              <rect x="0" y="17" width="60" height="6" fill="#C8102E"/>
+            </svg>
+            British Media Partnership · United Kingdom
+          </div>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Get strategy tips..." aria-label="Email for newsletter">
+            <button type="button">Subscribe</button>
+          </div>
+          <div class="footer-social">
+            <a href="https://instagram.com/viral.scaleai" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#0ABFBC"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.78a4.85 4.85 0 0 1-1-.09z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/video.html" class="footer-link">AI Video Production</a></li>
+            <li><a href="services/pets.html" class="footer-link">Pet Content</a></li>
+            <li><a href="services/websites.html" class="footer-link">Website Design</a></li>
+            <li><a href="services/social.html" class="footer-link">Social Media</a></li>
+            <li><a href="services/branding.html" class="footer-link">Brand Identity</a></li>
+            <li><a href="services/ads.html" class="footer-link">Paid Ads & Growth</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+          <div style="margin-top:24px">
+            <h4 class="footer-heading">Contact</h4>
+            <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.8">hello@viralscale.ai<br>@viral.scaleai<br>United Kingdom 🇬🇧</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Viral Scale AI. All rights reserved. Proudly partnered with British Media 🇬🇧</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-particles.js"></script>
+
+  <script>
+    // Fluence animations
+    (function() {
+      if (typeof gsap === 'undefined') return;
+
+      // Word-split hero animation
+      var words = document.querySelectorAll('.page-hero .word, .service-hero .word');
+      if (words.length) {
+        gsap.set(words, { opacity: 0, y: 32 });
+        gsap.to(words, { opacity: 1, y: 0, duration: 0.75, stagger: 0.08, ease: 'power3.out', delay: 0.2 });
+      }
+
+      // Subtext fade
+      var subs = document.querySelectorAll('.page-hero p, .service-hero p, .page-hero .section-label, .service-hero .section-label');
+      gsap.set(subs, { opacity: 0, y: 16 });
+      gsap.to(subs, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out', delay: 0.6 });
+
+      // Reveal-up on scroll
+      if (typeof ScrollTrigger !== 'undefined') {
+        document.querySelectorAll('.reveal-up').forEach(function(el) {
+          ScrollTrigger.create({
+            trigger: el,
+            start: 'top 85%',
+            onEnter: function() { el.classList.add('is-visible'); }
+          });
+        });
+
+        // Stagger cards
+        document.querySelectorAll('.grid-3, .services-grid, .gallery-grid, .masonry-grid').forEach(function(grid) {
+          var cards = grid.children;
+          gsap.fromTo(Array.from(cards),
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1, y: 0,
+              duration: 0.7,
+              stagger: 0.1,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: grid, start: 'top 80%' }
+            }
+          );
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    // FAQ Accordion
+    (function () {
+      var items = document.querySelectorAll('.faq-item');
+      items.forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+        var icon = item.querySelector('.faq-icon');
+        btn.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+          items.forEach(function (i) {
+            i.classList.remove('open');
+            var a = i.querySelector('.faq-answer');
+            var ic = i.querySelector('.faq-icon');
+            if (a) a.style.maxHeight = null;
+            if (ic) ic.textContent = '+';
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.textContent = '×';
+          }
+        });
+      });
+    })();
+
+    // Contact Form
+    (function () {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.querySelector('#name').value.trim();
+        var email = form.querySelector('#email').value.trim();
+        var message = form.querySelector('#message').value.trim();
+        if (!name || !email || !message) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        // Simulate submission
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      });
+    })();
+  </script>
+  <script src="assets/js/tilt3d.js"></script>
+</body>
+</html>

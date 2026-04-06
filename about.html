@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Viral Scale AI — a passionate team of designers, strategists, and AI specialists, in partnership with British Media, on a mission to help brands scale smarter.">
+  <meta property="og:title" content="About Us — Viral Scale AI">
+  <meta property="og:description" content="Meet the team behind Viral Scale AI. AI-first content agency in partnership with British Media, scaling brands globally.">
+  <meta property="og:image" content="assets/images/logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us — Viral Scale AI">
+  <meta name="twitter:description" content="Meet the team behind Viral Scale AI. AI-first content agency in partnership with British Media, scaling brands globally.">
+  <title>About Us — Viral Scale AI</title>
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    body {
+      background-color: #f0fafa;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(10,191,188,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(10,191,188,0.05) 0%, transparent 60%);
+    }
+
+    /* ── Hero glow blobs ── */
+    .hero-glow {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); pointer-events: none; z-index: 0;
+      animation: heroGlowPulse 8s ease-in-out infinite;
+    }
+    .hero-glow-1 { width: 500px; height: 500px; background: rgba(10,191,188,0.14); top: -120px; left: -80px; }
+    .hero-glow-2 { width: 350px; height: 350px; background: rgba(0,229,229,0.08); bottom: -60px; right: -60px; animation-delay: -4s; }
+    .hero-glow-3 { width: 280px; height: 280px; background: rgba(10,191,188,0.06); top: 20%; right: 10%; animation-delay: -8s; }
+    @keyframes heroGlowPulse {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(28px,-18px) scale(1.08); }
+      66% { transform: translate(-18px,14px) scale(0.95); }
+    }
+
+    /* Keep non-hero dark sections light */
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) {
+      background: transparent !important; color: inherit !important;
+    }
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) h2,
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) h3,
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) p { color: inherit !important; }
+
+    /* Hero stays dark */
+    .page-hero, .service-hero { background: #050D0D !important; color: #ffffff !important; }
+    .page-hero h1, .service-hero h1,
+    .page-hero h2, .service-hero h2,
+    .page-hero p,  .service-hero p  { color: #ffffff !important; }
+    .page-hero .section-label, .service-hero .section-label { color: rgba(255,255,255,0.7) !important; }
+
+    /* Nav active state */
+    .nav-link.active { color: #0ABFBC !important; }
+
+    /* ── About-specific styles ── */
+    .about-story { background: #f8fafb; }
+
+    .team-card {
+      border-radius: var(--radius-lg, 20px);
+      padding: 40px 32px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(10,191,188,0.12); }
+    .team-avatar {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, #0ABFBC, #007070);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700; color: #fff; margin: 0 auto 20px;
+    }
+    .team-role { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 16px; }
+
+    .values-card { border-radius: var(--radius-lg, 20px); padding: 40px; transition: transform 0.3s; }
+    .values-card:hover { transform: translateY(-4px); }
+    .values-emoji { font-size: 36px; margin-bottom: 16px; line-height: 1; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat-pill { border-radius: var(--radius-lg, 20px); padding: 36px 24px; text-align: center; }
+    .stat-number {
+      font-size: 44px; font-weight: 800;
+      background: linear-gradient(135deg, #0ABFBC, #00E5E5);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1; margin-bottom: 10px;
+    }
+    .stat-label { font-size: 14px; font-weight: 500; color: #4A5568; }
+
+    .cta-banner { position: relative; overflow: hidden; padding: 120px 0; }
+    .cta-blob { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; }
+    .cta-blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(10,191,188,0.2) 0%, transparent 70%); top: -100px; right: -100px; }
+    .cta-blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,229,229,0.15) 0%, transparent 70%); bottom: -80px; left: -80px; }
+    .cta-title { font-size: clamp(40px,5vw,64px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+
+    /* Responsive */
+    @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .page-hero { padding: 130px 0 80px; }
+    }
+    @media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+
+  </style>
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Page transition elements -->
+  <div id="page-transition"></div>
+  <div id="page-transition-logo"><img src="assets/images/logo.png" alt="Viral Scale AI"></div>
+
+  <!-- ══════════════════════════════
+       NAVIGATION
+  ══════════════════════════════ -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Viral Scale AI" height="36">
+        <span class="nav-brand-name">Viral Scale AI</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+
+        <div class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link nav-dropdown-trigger">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="services-dropdown glass-dark">
+            <a href="services/video.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div><strong>AI Video Production</strong><span>Cinematic, viral-ready content</span></div>
+            </a>
+            <a href="services/pets.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <div><strong>Pet Content</strong><span>Adorable, shareable pet media</span></div>
+            </a>
+            <a href="services/websites.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              </div>
+              <div><strong>Website Design</strong><span>Stunning, conversion-optimised sites</span></div>
+            </a>
+            <a href="services/social.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.7 5.5 4.3 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </div>
+              <div><strong>Social Media</strong><span>Growth across every platform</span></div>
+            </a>
+            <a href="services/branding.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div><strong>Brand Identity</strong><span>Logos, systems, unforgettable brands</span></div>
+            </a>
+            <a href="services/ads.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+              </div>
+              <div><strong>Paid Ads & Growth</strong><span>Data-driven Meta & Google ads</span></div>
+            </a>
+          </div>
+        </div>
+
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <a href="contact.html#contact-form" class="btn-primary nav-cta">Get Started →</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile-menu glass-dark" id="navMobileMenu">
+      <div class="nav-mobile-links">
+        <a href="index.html" class="nav-mobile-link">Home</a>
+        <a href="services/video.html" class="nav-mobile-link">AI Video</a>
+        <a href="services/pets.html" class="nav-mobile-link">Pet Content</a>
+        <a href="services/websites.html" class="nav-mobile-link">Websites</a>
+        <a href="services/social.html" class="nav-mobile-link">Social Media</a>
+        <a href="services/branding.html" class="nav-mobile-link">Branding</a>
+        <a href="services/ads.html" class="nav-mobile-link">Paid Ads</a>
+        <a href="gallery.html" class="nav-mobile-link">Gallery</a>
+        <a href="about.html" class="nav-mobile-link">About</a>
+        <a href="contact.html#contact-form" class="nav-mobile-link nav-mobile-cta">Get Started →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       PAGE HERO
+  ══════════════════════════════ -->
+  <section class="service-hero shimmer-border" style="background:var(--bg-dark);padding:160px 0 100px;position:relative;overflow:hidden">
+    <div class="hero-canvas-bg"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-bg-glow" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(10,191,188,0.13) 0%,transparent 70%);pointer-events:none"></div>
+    <div class="container" style="position:relative;z-index:1;text-align:center">
+      <div class="section-label reveal-up">Who We Are</div>
+      <h1 class="reveal-up" style="font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;line-height:1.1;margin:24px 0 28px">
+        <span class="word">Building</span> <span class="word">the</span> <span class="word"><span class="text-gradient">Future</span></span> <span class="word"><span class="text-gradient">of</span></span> <span class="word"><span class="text-gradient">AI</span></span> <span class="word"><span class="text-gradient">Content</span></span>
+      </h1>
+      <p class="reveal-up" style="font-size:1.2rem;color:rgba(255,255,255,0.7);max-width:680px;margin:0 auto 48px;line-height:1.8">A passionate team of designers, strategists, and AI specialists — proudly in partnership with British Media — on a mission to help brands scale smarter, faster, and louder.</p>
+      <div class="reveal-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="contact.html#contact-form" class="btn-primary btn-magnetic" style="font-size:1.05rem;padding:16px 36px">Work With Us →</a>
+        <a href="index.html" class="btn-ghost" style="font-size:1.05rem;padding:16px 36px">See Our Services</a>
+      </div>
+      <div class="reveal-up" style="display:flex;gap:40px;justify-content:center;margin-top:64px;flex-wrap:wrap">
+        <div style="text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="50" data-count-suffix="+">50+</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Brands Scaled</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="2" data-count-suffix="M+">2M+</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Views Generated</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="4" data-count-suffix="+">4+</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Years Experience</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="98" data-count-suffix="%">98%</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       OUR STORY
+  ══════════════════════════════ -->
+  <section class="section about-story section--pattern">
+    <div class="section-glow section-glow--tl"></div>
+    <div class="container">
+      <div class="grid-2 stagger-grid" style="align-items:center;gap:80px">
+        <div class="reveal-left">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-heading">Born from <span class="text-gradient">Passion</span>, Powered by AI</h2>
+          <p class="section-sub">Viral Scale AI was founded in 2022 by a group of digital natives who saw a gap in the market: brands desperate to go viral but without the tools, time, or expertise to make it happen consistently.</p>
+          <p style="margin-top:20px">We combined deep expertise in video production, growth marketing, and AI tooling to create a full-service agency that delivers enterprise-level content at startup speed.</p>
+          <p style="margin-top:20px">In partnership with a leading British Media Company, we operate globally — serving clients across the UK, North America, Europe, and beyond. Our diverse team brings creative excellence and global perspective to every campaign.</p>
+          <a href="contact.html#contact-form" class="btn-primary btn-magnetic" style="margin-top:32px;display:inline-flex">Work With Us →</a>
+        </div>
+
+        <div class="reveal-right">
+          <div class="glass" style="height:400px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;position:relative;overflow:hidden;background:rgba(5,13,13,0.55)">
+            <!-- Glow -->
+            <div style="position:absolute;width:320px;height:320px;background:radial-gradient(circle,rgba(10,191,188,0.18) 0%,transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none"></div>
+            <!-- UK Flag -->
+            <div style="position:relative;z-index:1;text-align:center">
+              <svg width="96" height="64" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,0.4);display:block;margin:0 auto">
+                <rect width="60" height="40" fill="#012169"/>
+                <polygon points="0,0 6,0 30,16 54,0 60,0 60,6 36,22 60,38 60,40 54,40 30,24 6,40 0,40 0,34 24,18 0,6" fill="white"/>
+                <polygon points="0,0 4,0 30,17 56,0 60,0 60,4 34,21 60,38 60,40 56,40 30,23 4,40 0,40 0,36 26,19 0,2" fill="#C8102E"/>
+                <rect x="25" y="0" width="10" height="40" fill="white"/>
+                <rect x="0" y="15" width="60" height="10" fill="white"/>
+                <rect x="27" y="0" width="6" height="40" fill="#C8102E"/>
+                <rect x="0" y="17" width="60" height="6" fill="#C8102E"/>
+              </svg>
+              <p style="color:#0ABFBC;font-size:13px;font-weight:700;margin-top:12px;letter-spacing:0.08em;text-transform:uppercase">British Media Partnership</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:4px">Serving clients globally from the UK</p>
+            </div>
+            <!-- World pin row -->
+            <div style="position:relative;z-index:1;display:flex;gap:16px;align-items:center">
+              <div style="text-align:center"><div style="font-size:18px">🇬🇧</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">UK</div></div>
+              <div style="width:32px;height:1px;background:linear-gradient(90deg,#0ABFBC,transparent)"></div>
+              <div style="text-align:center"><div style="font-size:18px">🇺🇸</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">US</div></div>
+              <div style="width:32px;height:1px;background:linear-gradient(90deg,#0ABFBC,transparent)"></div>
+              <div style="text-align:center"><div style="font-size:18px">🌏</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">Global</div></div>
+            </div>
+            <!-- Stat badges -->
+            <div class="glass-teal" style="position:absolute;bottom:20px;left:20px;padding:10px 16px;border-radius:10px;z-index:2">
+              <div style="font-size:18px;font-weight:800;color:#0ABFBC;line-height:1">50+</div>
+              <div style="font-size:10px;color:rgba(232,244,244,0.6);margin-top:2px">Brands Scaled</div>
+            </div>
+            <div class="glass-teal" style="position:absolute;top:20px;right:20px;padding:10px 16px;border-radius:10px;z-index:2">
+              <div style="font-size:18px;font-weight:800;color:#0ABFBC;line-height:1">2M+</div>
+              <div style="font-size:10px;color:rgba(232,244,244,0.6);margin-top:2px">Views Generated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       MISSION + VISION
+  ══════════════════════════════ -->
+  <section class="section section--pattern" style="background:var(--bg-soft)">
+    <div class="section-glow section-glow--br"></div>
+    <div class="container">
+      <div class="section-header text-center reveal-up">
+        <h2 class="section-heading">What <span class="text-gradient">Drives Us</span></h2>
+      </div>
+      <div class="grid-2 stagger-grid" style="margin-top:48px">
+        <div class="glass mission-card reveal-left" style="padding:48px;border-radius:var(--radius-lg);border-left:4px solid #0ABFBC">
+          <div class="section-label">Our Mission</div>
+          <h3>Democratise World-Class Content Creation</h3>
+          <p>We believe every brand deserves the power of premium content. Our mission is to make AI-driven, agency-quality creative accessible to businesses of every size — without the traditional agency price tag or timeline.</p>
+        </div>
+        <div class="glass vision-card reveal-right" style="padding:48px;border-radius:var(--radius-lg);border-left:4px solid #00E5E5">
+          <div class="section-label">Our Vision</div>
+          <h3>The Most Innovative AI Content Agency Globally</h3>
+          <p>By 2026, we aim to be the leading AI-first content agency globally — a hub of creative innovation backed by British Media expertise that sets new standards for what's possible when human creativity meets artificial intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       TEAM
+  ══════════════════════════════ -->
+  <section class="section section--pattern">
+    <div class="section-glow section-glow--tl"></div>
+    <div class="container">
+      <div class="section-header text-center reveal-up">
+        <div class="section-label">The Humans Behind the AI</div>
+        <h2 class="section-heading">Meet Our <span class="text-gradient">Team</span></h2>
+      </div>
+
+      <div class="grid-3 stagger-grid" style="margin-top:48px">
+        <div class="team-card glass">
+          <div class="team-avatar">KD</div>
+          <h3>Kai Dela Cruz</h3>
+          <p class="team-role text-teal">Founder & Creative Director</p>
+          <p>10+ years in brand design and content strategy. Former creative lead at two award-winning agencies before founding Viral Scale AI.</p>
+        </div>
+
+        <div class="team-card glass">
+          <div class="team-avatar">AR</div>
+          <h3>Alex Reyes</h3>
+          <p class="team-role text-teal">Head of AI & Technology</p>
+          <p>AI/ML specialist with a background in computer vision and generative models. Builds the custom AI pipelines that power our content engine.</p>
+        </div>
+
+        <div class="team-card glass">
+          <div class="team-avatar">JS</div>
+          <h3>Jamie Santos</h3>
+          <p class="team-role text-teal">Head of Growth & Paid Media</p>
+          <p>Managed $3M+ in ad spend across Meta and Google. Specialises in performance creative that actually converts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       VALUES
+  ══════════════════════════════ -->
+  <section class="section section--pattern" style="background:var(--bg-soft)">
+    <div class="section-glow section-glow--br"></div>
+    <div class="container">
+      <div class="section-header text-center reveal-up">
+        <div class="section-label">What We Stand For</div>
+        <h2 class="section-heading">Our <span class="text-gradient">Values</span></h2>
+      </div>
+
+      <div class="grid-2 stagger-grid" style="margin-top:48px">
+        <div class="glass-teal values-card">
+          <div class="values-emoji">&#9889;</div>
+          <h3>Speed Without Compromise</h3>
+          <p>We move fast because the internet doesn't wait. But speed never comes at the cost of quality — our AI systems ensure every deliverable meets our rigorous standards.</p>
+        </div>
+
+        <div class="glass-teal values-card">
+          <div class="values-emoji">&#129504;</div>
+          <h3>AI-First Thinking</h3>
+          <p>We don't just use AI as a tool — it's baked into our entire workflow. Every decision, from creative direction to distribution, is informed by AI-powered insights.</p>
+        </div>
+
+        <div class="glass-teal values-card">
+          <div class="values-emoji">&#129309;</div>
+          <h3>Radical Transparency</h3>
+          <p>No black boxes, no mystery metrics. We share everything — what we're doing, why, and exactly how it's performing. Your trust is our most valuable asset.</p>
+        </div>
+
+        <div class="glass-teal values-card">
+          <div class="values-emoji">&#127759;</div>
+          <h3>Global Heart, Local Soul</h3>
+          <p>Rooted in Filipino creativity and hospitality, built for the global market. We bring warmth, hustle, and cultural intelligence to everything we create.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       STATS BAR
+  ══════════════════════════════ -->
+  <section class="section section--pattern" style="background:#050D0D">
+    <div class="section-glow section-glow--tl"></div>
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-pill glass-dark reveal-up" style="text-align:center;padding:32px">
+          <div class="stat-number text-gradient" data-count="50" data-count-suffix="+">50+</div>
+          <div class="stat-label" style="color:rgba(255,255,255,0.6)">Brands Scaled</div>
+        </div>
+        <div class="stat-pill glass-dark reveal-up" style="text-align:center;padding:32px">
+          <div class="stat-number text-gradient" data-count="2" data-count-suffix="M+">2M+</div>
+          <div class="stat-label" style="color:rgba(255,255,255,0.6)">Views Generated</div>
+        </div>
+        <div class="stat-pill glass-dark reveal-up" style="text-align:center;padding:32px">
+          <div class="stat-number text-gradient" data-count="3" data-count-suffix=" yrs">3 yrs</div>
+          <div class="stat-label" style="color:rgba(255,255,255,0.6)">In Business</div>
+        </div>
+        <div class="stat-pill glass-dark reveal-up" style="text-align:center;padding:32px">
+          <div class="stat-number text-gradient" data-count="98" data-count-suffix="%">98%</div>
+          <div class="stat-label" style="color:rgba(255,255,255,0.6)">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       CTA BANNER
+  ══════════════════════════════ -->
+  <section class="section cta-banner section--dark section--pattern">
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+    <div class="container text-center" style="position:relative;z-index:1">
+      <div class="section-label" style="color:#0ABFBC">Start Today</div>
+      <h2 class="cta-title" style="color:white">Ready to <span class="text-gradient">Go Viral?</span></h2>
+      <p style="color:rgba(255,255,255,0.65);font-size:20px;max-width:500px;margin:20px auto 40px">
+        Join 50+ brands scaling their content with AI. Let's build something extraordinary.
+      </p>
+      <a href="contact.html#contact-form" class="btn-primary btn-magnetic" style="font-size:18px;padding:18px 48px">Book a Free Strategy Call →</a>
+      <p style="color:rgba(255,255,255,0.35);font-size:13px;margin-top:20px">No commitment required · Response within 24 hours</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Viral Scale AI" height="44">
+          </div>
+          <p class="footer-tagline">AI-powered content & digital agency, in partnership with British Media. Making brands go viral, one piece of content at a time.</p>
+          <div class="footer-uk-badge">
+            <svg width="22" height="15" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;flex-shrink:0">
+              <rect width="60" height="40" fill="#012169"/>
+              <polygon points="0,0 8,0 30,16 52,0 60,0 60,8 38,24 60,40 52,40 30,24 8,40 0,40 0,32 22,16 0,8" fill="white"/>
+              <polygon points="0,0 3,0 30,17.5 57,0 60,0 60,3 33,20 60,40 57,40 30,22.5 3,40 0,40 0,37 27,20 0,3" fill="#C8102E"/>
+              <rect x="25" y="0" width="10" height="40" fill="white"/>
+              <rect x="0" y="15" width="60" height="10" fill="white"/>
+              <rect x="27" y="0" width="6" height="40" fill="#C8102E"/>
+              <rect x="0" y="17" width="60" height="6" fill="#C8102E"/>
+            </svg>
+            British Media Partnership · United Kingdom
+          </div>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Get strategy tips..." aria-label="Email for newsletter">
+            <button type="button">Subscribe</button>
+          </div>
+          <div class="footer-social">
+            <a href="https://instagram.com/viral.scaleai" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#0ABFBC"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.78a4.85 4.85 0 0 1-1-.09z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/video.html" class="footer-link">AI Video Production</a></li>
+            <li><a href="services/pets.html" class="footer-link">Pet Content</a></li>
+            <li><a href="services/websites.html" class="footer-link">Website Design</a></li>
+            <li><a href="services/social.html" class="footer-link">Social Media</a></li>
+            <li><a href="services/branding.html" class="footer-link">Brand Identity</a></li>
+            <li><a href="services/ads.html" class="footer-link">Paid Ads & Growth</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company -->
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="contact.html#contact-form" class="footer-link">Book a Call</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal + Contact -->
+        <div>
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+          <div style="margin-top:24px">
+            <h4 class="footer-heading">Contact</h4>
+            <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.8">
+              hello@viralscale.ai<br>
+              @viral.scaleai<br>
+              United Kingdom &#127468;&#127463;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Viral Scale AI. All rights reserved. Proudly partnered with British Media 🇬🇧</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       SCRIPTS
+  ══════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-particles.js"></script>
+
+  <script>
+    /* ── About page — page-specific animations only ── */
+    /* Global init (Lenis, nav, scroll reveals, count-up) handled by main.js  */
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof gsap === 'undefined') return;
+
+      // ── Page hero entrance ──
+      const label = document.querySelector('#aboutHeroInner .section-label');
+      const h1    = document.querySelector('#aboutHeroInner h1');
+      const para  = document.querySelector('#aboutHeroInner p');
+      const inner = document.getElementById('aboutHeroInner');
+      if (label) gsap.set(label, { opacity: 0, y: 20 });
+      if (h1)    gsap.set(h1,    { opacity: 0, y: 40 });
+      if (para)  gsap.set(para,  { opacity: 0, y: 24 });
+
+      const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      if (label) heroTl.to(label, { opacity: 1, y: 0, duration: 0.6 });
+      if (h1)    heroTl.to(h1,   { opacity: 1, y: 0, duration: 0.8 }, '-=0.3');
+      if (para)  heroTl.to(para,  { opacity: 1, y: 0, duration: 0.7 }, '-=0.4');
+      if (inner) heroTl.from(inner, { borderColor: 'rgba(10,191,188,0)', duration: 1.2, ease: 'power2.inOut' }, 0);
+
+      // ── Team card hover micro-animation ──
+      document.querySelectorAll('.team-card').forEach(function (card) {
+        card.addEventListener('mouseenter', function () {
+          gsap.to(card.querySelector('.team-avatar'), {
+            scale: 1.1,
+            duration: 0.3,
+            ease: 'back.out(1.5)'
+          });
+        });
+        card.addEventListener('mouseleave', function () {
+          gsap.to(card.querySelector('.team-avatar'), {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      });
+
+      // ── Values card hover ──
+      document.querySelectorAll('.values-card').forEach(function (card) {
+        card.addEventListener('mouseenter', function () {
+          gsap.to(card.querySelector('.values-emoji'), {
+            y: -6,
+            scale: 1.15,
+            duration: 0.3,
+            ease: 'back.out(1.5)'
+          });
+        });
+        card.addEventListener('mouseleave', function () {
+          gsap.to(card.querySelector('.values-emoji'), {
+            y: 0,
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      });
+
+      // ── Parallax on page hero glow ──
+      window.addEventListener('scroll', function () {
+        const scrollY = window.scrollY;
+        const heroBefore = document.querySelector('.page-hero::before');
+        // Shift the hero background subtly
+        document.querySelector('.page-hero').style.backgroundPositionY = (scrollY * 0.3) + 'px';
+      });
+
+    });
+  </script>
+  <script src="assets/js/tilt3d.js"></script>
+</body>
+</html>

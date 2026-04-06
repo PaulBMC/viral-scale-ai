@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Viral Scale AI</title>
+  <meta name="description" content="See our portfolio of AI-powered content, websites, brand identities, and viral social media campaigns.">
+  <meta property="og:title" content="Gallery — Viral Scale AI">
+  <meta property="og:description" content="See our portfolio of AI-powered content, websites, brand identities, and viral social media campaigns.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    body {
+      background-color: #f0fafa;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(10,191,188,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(10,191,188,0.05) 0%, transparent 60%);
+    }
+
+    /* ── Fluence Design System ── */
+    .word { display: inline-block; will-change: transform, opacity; }
+
+    .section-divider {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10,191,188,0.25), transparent);
+      margin: 0;
+    }
+
+    /* Hero glow blobs */
+    .hero-glow {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); pointer-events: none; z-index: 0;
+      animation: heroGlowPulse 8s ease-in-out infinite;
+    }
+    .hero-glow-1 { width: 500px; height: 500px; background: rgba(10,191,188,0.14); top: -120px; left: -80px; }
+    .hero-glow-2 { width: 350px; height: 350px; background: rgba(0,229,229,0.08); bottom: -60px; right: -60px; animation-delay: -4s; }
+    @keyframes heroGlowPulse {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(28px,-18px) scale(1.08); }
+      66% { transform: translate(-18px,14px) scale(0.95); }
+    }
+
+    /* iOS glass cards */
+    .glass:not(.glass-dark):not(.glass-teal) {
+      background: rgba(255,255,255,0.52) !important;
+      backdrop-filter: blur(24px) saturate(1.9) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.9) !important;
+      border: 1px solid rgba(255,255,255,0.75) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+    }
+
+    /* Service/Gallery/Contact card glass */
+    .service-card, .gallery-item, .contact-info-card, .faq-item, .values-card, .process-card {
+      background: rgba(255,255,255,0.52) !important;
+      backdrop-filter: blur(24px) saturate(1.9) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.9) !important;
+      border: 1px solid rgba(255,255,255,0.75) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+    }
+    .service-card:hover, .gallery-item:hover, .contact-info-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: rgba(255,255,255,0.95) !important;
+      box-shadow: 0 16px 48px rgba(10,191,188,0.16), 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+    }
+
+    /* Section backgrounds light */
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) {
+      background: transparent !important;
+      color: inherit !important;
+    }
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) h2,
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) h3,
+    .section--dark:not(.page-hero):not(.service-hero):not(.section-cta) p {
+      color: inherit !important;
+    }
+
+    /* Page hero must stay dark */
+    .page-hero, .service-hero {
+      background: #050D0D !important;
+      color: #ffffff !important;
+    }
+    .page-hero h1, .service-hero h1,
+    .page-hero h2, .service-hero h2,
+    .page-hero p, .service-hero p { color: #ffffff !important; }
+    .page-hero .section-label, .service-hero .section-label { color: rgba(255,255,255,0.7) !important; }
+
+    /* Stat blocks in service hero */
+    .stat-number, .hero-stat-number { color: #0ABFBC !important; }
+
+    /* Gallery play button position fix */
+    .gallery-item .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+
+    /* Gallery filter tabs */
+    .filter-btn {
+      background: rgba(255,255,255,0.52);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.75);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 14px; font-weight: 500;
+      color: #4A5568;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.85);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(10,191,188,0.15);
+      border-color: rgba(10,191,188,0.4);
+      color: #0ABFBC;
+      box-shadow: 0 8px 24px rgba(10,191,188,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    /* Contact form glass */
+    .contact-form-wrap, form.contact-form {
+      background: rgba(255,255,255,0.52) !important;
+      backdrop-filter: blur(24px) saturate(1.9) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.9) !important;
+      border: 1px solid rgba(255,255,255,0.75) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+    }
+
+    /* GSAP reveal base */
+    .reveal-up { opacity: 0; transform: translateY(40px); }
+    .reveal-up.is-visible { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+  </style>
+</head>
+<body>
+
+  <div id="page-transition"></div>
+  <div id="page-transition-logo"><img src="assets/images/logo.png" alt="Viral Scale AI"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Viral Scale AI" height="36">
+        <span class="nav-brand-name">Viral Scale AI</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link nav-dropdown-trigger">Services <span>▾</span></a>
+          <div class="services-dropdown glass-dark">
+            <a href="services/video.html" class="dropdown-item"><div class="dropdown-icon">▶</div><div><strong>AI Video Production</strong><span>Cinematic content</span></div></a>
+            <a href="services/pets.html" class="dropdown-item"><div class="dropdown-icon">🐾</div><div><strong>Pet Content</strong><span>Heart-melting content</span></div></a>
+            <a href="services/websites.html" class="dropdown-item"><div class="dropdown-icon">🌐</div><div><strong>Website Design</strong><span>Conversion-first sites</span></div></a>
+            <a href="services/social.html" class="dropdown-item"><div class="dropdown-icon">📱</div><div><strong>Social Media</strong><span>Grow your audience</span></div></a>
+            <a href="services/branding.html" class="dropdown-item"><div class="dropdown-icon">✨</div><div><strong>Brand Identity</strong><span>Unforgettable brands</span></div></a>
+            <a href="services/ads.html" class="dropdown-item"><div class="dropdown-icon">📈</div><div><strong>Paid Ads & Growth</strong><span>Data-driven campaigns</span></div></a>
+          </div>
+        </div>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <a href="contact.html#contact-form" class="btn-primary nav-cta">Get Started →</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile-menu glass-dark" id="navMobileMenu">
+      <div class="nav-mobile-links">
+        <a href="index.html" class="nav-mobile-link">Home</a>
+        <a href="services/video.html" class="nav-mobile-link">AI Video</a>
+        <a href="services/pets.html" class="nav-mobile-link">Pet Content</a>
+        <a href="services/websites.html" class="nav-mobile-link">Websites</a>
+        <a href="services/social.html" class="nav-mobile-link">Social Media</a>
+        <a href="services/branding.html" class="nav-mobile-link">Branding</a>
+        <a href="services/ads.html" class="nav-mobile-link">Paid Ads</a>
+        <a href="gallery.html" class="nav-mobile-link">Gallery</a>
+        <a href="about.html" class="nav-mobile-link">About</a>
+        <a href="contact.html#contact-form" class="nav-mobile-link nav-mobile-cta">Get Started →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="service-hero shimmer-border" style="background:var(--bg-dark);padding:160px 0 100px;position:relative;overflow:hidden">
+      <div class="hero-canvas-bg"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-bg-glow" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(10,191,188,0.13) 0%,transparent 70%);pointer-events:none"></div>
+      <div class="container" style="position:relative;z-index:1;text-align:center">
+        <div class="section-label reveal-up">Portfolio</div>
+        <h1 class="reveal-up" style="font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;line-height:1.1;margin:24px 0 28px">
+          <span class="word">Our</span> <span class="word">Work</span> <span class="word"><span class="text-gradient">Speaks</span></span> <span class="word"><span class="text-gradient">for</span></span> <span class="word"><span class="text-gradient">Itself</span></span>
+        </h1>
+        <p class="reveal-up" style="font-size:1.2rem;color:rgba(255,255,255,0.7);max-width:680px;margin:0 auto 48px;line-height:1.8">Explore our portfolio of AI-powered content, stunning websites, viral social campaigns, and brand identities that drive real results.</p>
+        <div class="reveal-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="contact.html#contact-form" class="btn-primary btn-magnetic" style="font-size:1.05rem;padding:16px 36px">Start Your Project →</a>
+          <a href="index.html#services" class="btn-ghost" style="font-size:1.05rem;padding:16px 36px">Our Services</a>
+        </div>
+        <div class="reveal-up" style="display:flex;gap:40px;justify-content:center;margin-top:64px;flex-wrap:wrap">
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="200" data-count-suffix="+">200+</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Projects Delivered</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="10" data-count-suffix="M+">10M+</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Views Generated</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="50" data-count-suffix="+">50+</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Brands Scaled</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#0ABFBC" data-count="98" data-count-suffix="%">98%</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:4px">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- GALLERY SECTION -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Section header -->
+        <div style="text-align:center;margin-bottom:48px">
+          <div class="section-label reveal-up">Our Portfolio</div>
+          <h2 class="section-heading reveal-up">Work That <span class="text-gradient">Drives Results</span></h2>
+          <p class="reveal-up" style="max-width:560px;margin:0 auto;color:var(--text-body);">Every piece crafted to convert, engage, and grow. Filter by category below.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="video">Video</button>
+          <button class="filter-tab" data-filter="pets">Pets</button>
+          <button class="filter-tab" data-filter="websites">Websites</button>
+          <button class="filter-tab" data-filter="branding">Branding</button>
+          <button class="filter-tab" data-filter="social">Social</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="masonry-grid" id="galleryGrid">
+
+          <!-- VIDEO 1 — Cinematic Brand Film -->
+          <div class="gallery-item glass" data-category="video">
+            <div class="gallery-thumb" style="height:290px;background:linear-gradient(160deg,#030B0B 0%,#0A2020 60%,#0ABFBC20 100%);position:relative;overflow:hidden;">
+              <!-- Film scene mockup -->
+              <div style="position:absolute;inset:0;">
+                <!-- Cinematic bars -->
+                <div style="position:absolute;top:0;left:0;right:0;height:32px;background:#000;"></div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:32px;background:#000;"></div>
+                <!-- Scene content -->
+                <div style="position:absolute;top:32px;left:0;right:0;bottom:32px;display:flex;align-items:center;justify-content:center;">
+                  <div style="text-align:center;">
+                    <div style="font-size:42px;font-weight:900;letter-spacing:-2px;color:white;text-shadow:0 0 40px rgba(10,191,188,0.8);">NOVA</div>
+                    <div style="font-size:11px;letter-spacing:5px;color:#0ABFBC;text-transform:uppercase;margin-top:4px;">LAUNCH FILM</div>
+                  </div>
+                </div>
+                <!-- Lens flare -->
+                <div style="position:absolute;top:50%;left:20%;width:120px;height:120px;background:radial-gradient(circle,rgba(10,191,188,0.25) 0%,transparent 70%);transform:translateY(-50%);border-radius:50%;"></div>
+              </div>
+              <!-- Video controls bar -->
+              <div style="position:absolute;bottom:32px;left:0;right:0;padding:8px 14px;background:linear-gradient(transparent,rgba(0,0,0,0.85));display:flex;flex-direction:column;gap:5px;">
+                <div style="height:3px;background:rgba(255,255,255,0.2);border-radius:2px;position:relative;">
+                  <div style="width:35%;height:100%;background:#0ABFBC;border-radius:2px;"></div>
+                  <div style="position:absolute;top:50%;left:35%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:white;"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="display:flex;gap:8px;align-items:center;">
+                    <div style="width:16px;height:16px;background:rgba(255,255,255,0.9);clip-path:polygon(0 0,100% 50%,0 100%);"></div>
+                    <span style="color:rgba(255,255,255,0.7);font-size:10px;">1:02 / 2:47</span>
+                  </div>
+                  <div style="display:flex;gap:6px;align-items:center;">
+                    <span style="color:#0ABFBC;font-size:10px;letter-spacing:1px;">HD</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                  </div>
+                </div>
+              </div>
+              <!-- Play button -->
+              <div class="play-btn glass-dark" style="top:50%;transform:translate(-50%,-50%)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">NOVA Brand Launch Film</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">AI Video · 3.2M views · 2025</p>
+            </div>
+          </div>
+
+          <!-- PETS 1 — Instagram Reel Mockup -->
+          <div class="gallery-item glass" data-category="pets">
+            <div class="gallery-thumb" style="height:330px;background:#0a0a12;position:relative;overflow:hidden;">
+              <!-- Phone frame mockup -->
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                <div style="width:140px;height:240px;border-radius:20px;border:2px solid rgba(255,255,255,0.15);background:linear-gradient(180deg,#1a3a3a 0%,#0a2a2a 100%);position:relative;overflow:hidden;box-shadow:0 0 40px rgba(10,191,188,0.2);">
+                  <!-- Video frame -->
+                  <div style="position:absolute;inset:0;display:flex;flex-direction:column;">
+                    <!-- Dog image sim -->
+                    <div style="flex:1;background:linear-gradient(160deg,#1a4040,#0a2828);display:flex;align-items:center;justify-content:center;font-size:56px;position:relative;">
+                      🐕
+                      <!-- Gradient overlay -->
+                      <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,rgba(0,0,0,0.7));"></div>
+                    </div>
+                    <!-- IG Reels UI bar -->
+                    <div style="padding:8px;background:rgba(0,0,0,0.8);">
+                      <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                        <div style="width:18px;height:18px;border-radius:50%;background:#0ABFBC;"></div>
+                        <span style="color:white;font-size:7px;font-weight:600;">@pawsrescue</span>
+                        <span style="color:#0ABFBC;font-size:6px;border:1px solid #0ABFBC;border-radius:3px;padding:1px 4px;">Follow</span>
+                      </div>
+                      <div style="color:rgba(255,255,255,0.7);font-size:6px;line-height:1.3;margin-bottom:4px;">Meet Rocky 🐾 He's been waiting 6 months for his forever home...</div>
+                      <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:1px;">
+                        <div style="width:60%;height:100%;background:#0ABFBC;border-radius:1px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Side actions -->
+                  <div style="position:absolute;right:6px;bottom:60px;display:flex;flex-direction:column;gap:10px;align-items:center;">
+                    <div style="text-align:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><div style="color:white;font-size:6px;">9.4K</div></div>
+                    <div style="text-align:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div style="color:white;font-size:6px;">312</div></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Stats pills -->
+              <div style="position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px;">
+                <div style="background:rgba(10,191,188,0.2);border:1px solid rgba(10,191,188,0.5);border-radius:20px;padding:3px 10px;color:#0ABFBC;font-size:10px;font-weight:600;">2.8M Views</div>
+                <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 10px;color:white;font-size:10px;">#1 Trending</div>
+              </div>
+              <div class="play-btn glass-dark" style="top:42%;transform:translate(-50%,-50%)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">Rescue Shelter Reel Series</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Pet Content · 2.8M Views · 2025</p>
+            </div>
+          </div>
+
+          <!-- WEBSITES 1 — Browser Mockup -->
+          <div class="gallery-item glass" data-category="websites">
+            <div class="gallery-thumb" style="height:250px;background:#0D1117;position:relative;overflow:hidden;">
+              <!-- Browser chrome -->
+              <div style="position:absolute;top:0;left:0;right:0;height:26px;background:#1a1f2a;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;padding:0 10px;gap:5px;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#febc2e;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#28c840;"></div>
+                <div style="flex:1;margin:0 8px;height:14px;background:#252932;border-radius:4px;display:flex;align-items:center;padding:0 8px;">
+                  <span style="color:rgba(255,255,255,0.35);font-size:7px;">viralscale.ai/store</span>
+                </div>
+              </div>
+              <!-- Website content preview -->
+              <div style="position:absolute;top:26px;left:0;right:0;bottom:0;overflow:hidden;">
+                <!-- Hero section sim -->
+                <div style="background:linear-gradient(135deg,#050D0D 0%,#0A1A1A 100%);padding:14px 12px 10px;">
+                  <!-- Nav bar -->
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                    <div style="width:50px;height:6px;background:#0ABFBC;border-radius:3px;"></div>
+                    <div style="display:flex;gap:6px;">
+                      <div style="width:24px;height:4px;background:rgba(255,255,255,0.3);border-radius:2px;"></div>
+                      <div style="width:24px;height:4px;background:rgba(255,255,255,0.3);border-radius:2px;"></div>
+                      <div style="width:24px;height:4px;background:rgba(255,255,255,0.3);border-radius:2px;"></div>
+                      <div style="width:32px;height:14px;background:#0ABFBC;border-radius:4px;"></div>
+                    </div>
+                  </div>
+                  <!-- Hero text -->
+                  <div style="margin-bottom:8px;">
+                    <div style="width:90%;height:10px;background:linear-gradient(90deg,white,rgba(255,255,255,0.6));border-radius:4px;margin-bottom:5px;"></div>
+                    <div style="width:70%;height:10px;background:linear-gradient(90deg,white,rgba(255,255,255,0.4));border-radius:4px;margin-bottom:8px;"></div>
+                    <div style="width:55%;height:7px;background:rgba(255,255,255,0.3);border-radius:3px;margin-bottom:5px;"></div>
+                    <div style="width:42%;height:7px;background:rgba(255,255,255,0.2);border-radius:3px;margin-bottom:10px;"></div>
+                    <div style="display:inline-block;padding:5px 14px;background:linear-gradient(90deg,#0ABFBC,#00E5E5);border-radius:5px;">
+                      <div style="height:5px;width:50px;background:rgba(0,0,0,0.3);border-radius:2px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Product cards row -->
+                <div style="background:#f0fafa;padding:8px 10px;display:flex;gap:6px;">
+                  <div style="flex:1;background:white;border-radius:6px;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="height:36px;background:linear-gradient(135deg,#e0f7f7,#c0efef);border-radius:4px;margin-bottom:5px;display:flex;align-items:center;justify-content:center;font-size:16px;">✨</div>
+                    <div style="height:5px;background:#ddd;border-radius:2px;margin-bottom:3px;width:80%;"></div>
+                    <div style="height:5px;background:#eee;border-radius:2px;width:60%;"></div>
+                  </div>
+                  <div style="flex:1;background:white;border-radius:6px;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="height:36px;background:linear-gradient(135deg,#e0f7f7,#c0efef);border-radius:4px;margin-bottom:5px;display:flex;align-items:center;justify-content:center;font-size:16px;">🎯</div>
+                    <div style="height:5px;background:#ddd;border-radius:2px;margin-bottom:3px;width:75%;"></div>
+                    <div style="height:5px;background:#eee;border-radius:2px;width:55%;"></div>
+                  </div>
+                  <div style="flex:1;background:white;border-radius:6px;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="height:36px;background:linear-gradient(135deg,#e0f7f7,#c0efef);border-radius:4px;margin-bottom:5px;display:flex;align-items:center;justify-content:center;font-size:16px;">⚡</div>
+                    <div style="height:5px;background:#ddd;border-radius:2px;margin-bottom:3px;width:70%;"></div>
+                    <div style="height:5px;background:#eee;border-radius:2px;width:50%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">E-Commerce Redesign</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Website Design · +240% CR · 2025</p>
+            </div>
+          </div>
+
+          <!-- VIDEO 2 — TikTok/Reels Product Showcase -->
+          <div class="gallery-item glass" data-category="video">
+            <div class="gallery-thumb" style="height:230px;background:#030810;position:relative;overflow:hidden;">
+              <!-- TikTok-style vertical video frame -->
+              <div style="position:absolute;inset:0;">
+                <!-- Background glow -->
+                <div style="position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:180px;height:180px;background:radial-gradient(circle,rgba(10,191,188,0.25) 0%,transparent 70%);border-radius:50%;"></div>
+                <!-- Product visual -->
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                  <div style="width:80px;height:80px;border-radius:16px;background:linear-gradient(135deg,#0ABFBC,#006060);display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 0 30px rgba(10,191,188,0.5);">🛍️</div>
+                </div>
+                <!-- View counter badge -->
+                <div style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.7);border:1px solid rgba(10,191,188,0.4);border-radius:20px;padding:3px 10px;display:flex;align-items:center;gap:4px;">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="#0ABFBC"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span style="color:white;font-size:9px;font-weight:600;">1.8M</span>
+                </div>
+                <!-- Bottom overlay -->
+                <div style="position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,0.8));">
+                  <div style="color:white;font-size:10px;font-weight:700;margin-bottom:2px;">Product Showcase Reel ✨</div>
+                  <div style="color:rgba(255,255,255,0.6);font-size:9px;">#ProductLaunch #Trending #AI</div>
+                  <!-- Progress bar -->
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:1px;margin-top:6px;">
+                    <div style="width:55%;height:100%;background:#0ABFBC;border-radius:1px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="play-btn glass-dark">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">Product Showcase Reel</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">AI Video · 1.8M Views · 2025</p>
+            </div>
+          </div>
+
+          <!-- BRANDING 1 — Full Brand Identity Board -->
+          <div class="gallery-item glass" data-category="branding">
+            <div class="gallery-thumb" style="height:310px;background:#F8FAFA;position:relative;overflow:hidden;">
+              <!-- Brand board layout -->
+              <div style="position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;gap:10px;">
+                <!-- Logo area -->
+                <div style="background:#050D0D;border-radius:10px;padding:16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#0ABFBC,#00E5E5);display:flex;align-items:center;justify-content:center;font-weight:900;color:#050D0D;font-size:14px;">N</div>
+                    <div>
+                      <div style="color:white;font-weight:700;font-size:12px;">NEXUS</div>
+                      <div style="color:rgba(255,255,255,0.4);font-size:8px;letter-spacing:2px;">CREATIVE</div>
+                    </div>
+                  </div>
+                  <div style="color:rgba(255,255,255,0.2);font-size:8px;letter-spacing:1px;">PRIMARY LOGO</div>
+                </div>
+                <!-- Color palette -->
+                <div style="display:flex;gap:4px;flex-shrink:0;">
+                  <div style="flex:1;height:28px;border-radius:6px;background:#0ABFBC;display:flex;align-items:center;justify-content:center;font-size:7px;color:rgba(0,0,0,0.6);font-weight:600;">#0ABFBC</div>
+                  <div style="flex:1;height:28px;border-radius:6px;background:#050D0D;display:flex;align-items:center;justify-content:center;font-size:7px;color:rgba(255,255,255,0.6);font-weight:600;">#050D0D</div>
+                  <div style="flex:1;height:28px;border-radius:6px;background:#00E5E5;display:flex;align-items:center;justify-content:center;font-size:7px;color:rgba(0,0,0,0.6);font-weight:600;">#00E5E5</div>
+                  <div style="flex:1;height:28px;border-radius:6px;background:#F0FAFA;border:1px solid #e0;display:flex;align-items:center;justify-content:center;font-size:7px;color:#888;font-weight:600;">#F0FAFA</div>
+                </div>
+                <!-- Typography row -->
+                <div style="background:#f5f8f8;border-radius:8px;padding:10px;flex-shrink:0;">
+                  <div style="font-size:16px;font-weight:800;color:#050D0D;line-height:1;">NEXUS</div>
+                  <div style="font-size:9px;color:#0ABFBC;letter-spacing:3px;text-transform:uppercase;margin-top:2px;">Typeface · Inter 800</div>
+                </div>
+                <!-- Mockup cards row -->
+                <div style="display:flex;gap:6px;flex:1;">
+                  <div style="flex:1;background:#050D0D;border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:4px;">
+                    <div style="height:5px;background:#0ABFBC;border-radius:2px;width:60%;"></div>
+                    <div style="height:4px;background:rgba(255,255,255,0.2);border-radius:2px;"></div>
+                    <div style="height:4px;background:rgba(255,255,255,0.15);border-radius:2px;width:80%;"></div>
+                    <div style="height:14px;background:linear-gradient(90deg,#0ABFBC,#00E5E5);border-radius:4px;width:70%;margin-top:4px;"></div>
+                  </div>
+                  <div style="flex:1;background:linear-gradient(135deg,#0ABFBC,#007070);border-radius:8px;padding:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                    <div style="font-size:18px;font-weight:900;color:white;">N</div>
+                    <div style="font-size:6px;color:rgba(255,255,255,0.7);letter-spacing:1px;">ICON</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Brand Identity label -->
+              <div style="position:absolute;top:12px;right:12px;background:#0ABFBC;border-radius:6px;padding:3px 8px;">
+                <span style="color:white;font-size:9px;font-weight:700;letter-spacing:1px;">BRAND SYSTEM</span>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">Nexus Brand Identity</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Brand Identity · Full System · 2025</p>
+            </div>
+          </div>
+
+          <!-- SOCIAL 1 — Analytics Dashboard Mockup -->
+          <div class="gallery-item glass" data-category="social">
+            <div class="gallery-thumb" style="height:270px;background:#0D1117;position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;gap:8px;">
+                <!-- Dashboard header -->
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="color:white;font-size:10px;font-weight:700;">Growth Dashboard</div>
+                  <div style="background:rgba(10,191,188,0.15);border:1px solid rgba(10,191,188,0.3);border-radius:10px;padding:2px 8px;color:#0ABFBC;font-size:8px;">Last 30 days</div>
+                </div>
+                <!-- Stat cards -->
+                <div style="display:flex;gap:6px;">
+                  <div style="flex:1;background:rgba(10,191,188,0.08);border:1px solid rgba(10,191,188,0.2);border-radius:8px;padding:8px;">
+                    <div style="color:rgba(255,255,255,0.5);font-size:7px;margin-bottom:3px;">FOLLOWERS</div>
+                    <div style="color:white;font-size:13px;font-weight:800;">+420%</div>
+                    <div style="color:#0ABFBC;font-size:7px;">↑ +12.4K</div>
+                  </div>
+                  <div style="flex:1;background:rgba(10,191,188,0.08);border:1px solid rgba(10,191,188,0.2);border-radius:8px;padding:8px;">
+                    <div style="color:rgba(255,255,255,0.5);font-size:7px;margin-bottom:3px;">REACH</div>
+                    <div style="color:white;font-size:13px;font-weight:800;">2.4M</div>
+                    <div style="color:#0ABFBC;font-size:7px;">↑ +62%</div>
+                  </div>
+                  <div style="flex:1;background:rgba(10,191,188,0.08);border:1px solid rgba(10,191,188,0.2);border-radius:8px;padding:8px;">
+                    <div style="color:rgba(255,255,255,0.5);font-size:7px;margin-bottom:3px;">ENG. RATE</div>
+                    <div style="color:white;font-size:13px;font-weight:800;">8.7%</div>
+                    <div style="color:#0ABFBC;font-size:7px;">↑ avg 2.1%</div>
+                  </div>
+                </div>
+                <!-- Chart area -->
+                <div style="flex:1;background:rgba(10,191,188,0.04);border:1px solid rgba(10,191,188,0.12);border-radius:8px;padding:8px;position:relative;overflow:hidden;">
+                  <div style="color:rgba(255,255,255,0.4);font-size:7px;margin-bottom:6px;">Follower Growth · Jan–Mar 2025</div>
+                  <!-- Chart bars -->
+                  <div style="display:flex;align-items:flex-end;gap:3px;height:55px;">
+                    <div style="flex:1;background:rgba(10,191,188,0.25);border-radius:2px 2px 0 0;height:30%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.3);border-radius:2px 2px 0 0;height:40%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.35);border-radius:2px 2px 0 0;height:45%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.45);border-radius:2px 2px 0 0;height:55%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.55);border-radius:2px 2px 0 0;height:65%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.65);border-radius:2px 2px 0 0;height:72%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.8);border-radius:2px 2px 0 0;height:85%;"></div>
+                    <div style="flex:1;background:#0ABFBC;border-radius:2px 2px 0 0;height:100%;"></div>
+                  </div>
+                  <!-- Glow line -->
+                  <div style="position:absolute;bottom:8px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(10,191,188,0.3),transparent);"></div>
+                </div>
+                <!-- Platform badges -->
+                <div style="display:flex;gap:4px;">
+                  <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:4px 8px;display:flex;align-items:center;gap:4px;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/></svg>
+                    <span style="color:rgba(255,255,255,0.6);font-size:8px;">Instagram</span>
+                  </div>
+                  <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:4px 8px;display:flex;align-items:center;gap:4px;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="#0ABFBC"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.78a4.85 4.85 0 0 1-1-.09z"/></svg>
+                    <span style="color:rgba(255,255,255,0.6);font-size:8px;">TikTok</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">Instagram Growth Campaign</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Social Media · +420% Growth · 2025</p>
+            </div>
+          </div>
+
+          <!-- PETS 2 — TikTok Multi-Episode Series -->
+          <div class="gallery-item glass" data-category="pets">
+            <div class="gallery-thumb" style="height:250px;background:#080810;position:relative;overflow:hidden;">
+              <!-- Multiple video frames layered -->
+              <div style="position:absolute;inset:0;">
+                <!-- Background glow -->
+                <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(10,191,188,0.12) 0%,transparent 70%);border-radius:50%;"></div>
+                <!-- Three stacked phone frames -->
+                <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);display:flex;gap:-10px;">
+                  <!-- Back card -->
+                  <div style="position:absolute;top:8px;left:50%;transform:translateX(-60%);width:90px;height:155px;border-radius:12px;background:rgba(10,191,188,0.1);border:1px solid rgba(10,191,188,0.2);"></div>
+                  <!-- Middle card -->
+                  <div style="position:absolute;top:4px;left:50%;transform:translateX(-50%);width:95px;height:162px;border-radius:12px;background:rgba(10,191,188,0.15);border:1px solid rgba(10,191,188,0.25);"></div>
+                  <!-- Front card -->
+                  <div style="position:relative;width:100px;height:170px;border-radius:14px;background:linear-gradient(180deg,#1a3535 0%,#0a2020 100%);border:1.5px solid rgba(10,191,188,0.4);overflow:hidden;box-shadow:0 8px 32px rgba(10,191,188,0.2);z-index:2;">
+                    <div style="display:flex;flex-direction:column;height:100%;">
+                      <div style="flex:1;display:flex;align-items:center;justify-content:center;font-size:40px;position:relative;">
+                        🐱
+                        <div style="position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(0,0,0,0.6));"></div>
+                      </div>
+                      <div style="padding:6px;background:rgba(0,0,0,0.7);">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+                          <span style="color:white;font-size:7px;font-weight:600;">@fluffybrand</span>
+                          <span style="color:#0ABFBC;font-size:6px;border:1px solid #0ABFBC;border-radius:2px;padding:0 3px;">Follow</span>
+                        </div>
+                        <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:1px;">
+                          <div style="width:40%;height:100%;background:#0ABFBC;border-radius:1px;"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Episode badge -->
+                    <div style="position:absolute;top:6px;right:6px;background:rgba(0,0,0,0.7);border-radius:8px;padding:2px 5px;">
+                      <span style="color:white;font-size:7px;">Ep.8</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Stats strip at bottom -->
+                <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));padding:10px 14px 12px;">
+                  <div style="display:flex;justify-content:space-around;">
+                    <div style="text-align:center;">
+                      <div style="color:white;font-weight:700;font-size:12px;">12</div>
+                      <div style="color:rgba(255,255,255,0.5);font-size:8px;">Episodes</div>
+                    </div>
+                    <div style="text-align:center;">
+                      <div style="color:#0ABFBC;font-weight:700;font-size:12px;">8.2M</div>
+                      <div style="color:rgba(255,255,255,0.5);font-size:8px;">Total Views</div>
+                    </div>
+                    <div style="text-align:center;">
+                      <div style="color:white;font-weight:700;font-size:12px;">94K</div>
+                      <div style="color:rgba(255,255,255,0.5);font-size:8px;">Followers</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="play-btn glass-dark" style="top:44%;transform:translate(-50%,-50%)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">Pet Brand TikTok Series</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Pet Content · 12 Episodes · 8.2M Views</p>
+            </div>
+          </div>
+
+          <!-- WEBSITES 2 — SaaS Dashboard Mockup -->
+          <div class="gallery-item glass" data-category="websites">
+            <div class="gallery-thumb" style="height:330px;background:#0D1117;position:relative;overflow:hidden;">
+              <!-- Browser chrome -->
+              <div style="position:absolute;top:0;left:0;right:0;height:22px;background:#161b25;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;padding:0 8px;gap:4px;">
+                <div style="width:6px;height:6px;border-radius:50%;background:#ff5f57;"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:#febc2e;"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:#28c840;"></div>
+                <div style="flex:1;margin:0 6px;height:11px;background:#1e2536;border-radius:3px;display:flex;align-items:center;padding:0 6px;">
+                  <span style="color:rgba(255,255,255,0.25);font-size:6px;">app.nexussaas.io/dashboard</span>
+                </div>
+              </div>
+              <!-- Dashboard layout -->
+              <div style="position:absolute;top:22px;left:0;right:0;bottom:0;display:flex;">
+                <!-- Sidebar -->
+                <div style="width:42px;background:#0a0f18;border-right:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;align-items:center;padding:10px 0;gap:10px;">
+                  <div style="width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#0ABFBC,#006060);margin-bottom:6px;"></div>
+                  <div style="width:18px;height:18px;border-radius:5px;background:rgba(10,191,188,0.2);"></div>
+                  <div style="width:18px;height:18px;border-radius:5px;background:rgba(255,255,255,0.06);"></div>
+                  <div style="width:18px;height:18px;border-radius:5px;background:rgba(255,255,255,0.06);"></div>
+                  <div style="width:18px;height:18px;border-radius:5px;background:rgba(255,255,255,0.06);"></div>
+                </div>
+                <!-- Main content -->
+                <div style="flex:1;padding:10px;overflow:hidden;">
+                  <!-- Top row stats -->
+                  <div style="display:flex;gap:5px;margin-bottom:8px;">
+                    <div style="flex:1;background:rgba(10,191,188,0.07);border:1px solid rgba(10,191,188,0.15);border-radius:6px;padding:6px;">
+                      <div style="color:rgba(255,255,255,0.4);font-size:6px;margin-bottom:2px;">MRR</div>
+                      <div style="color:white;font-size:11px;font-weight:700;">£12.4K</div>
+                      <div style="color:#0ABFBC;font-size:6px;">↑ +23%</div>
+                    </div>
+                    <div style="flex:1;background:rgba(10,191,188,0.07);border:1px solid rgba(10,191,188,0.15);border-radius:6px;padding:6px;">
+                      <div style="color:rgba(255,255,255,0.4);font-size:6px;margin-bottom:2px;">USERS</div>
+                      <div style="color:white;font-size:11px;font-weight:700;">1,847</div>
+                      <div style="color:#0ABFBC;font-size:6px;">↑ +182</div>
+                    </div>
+                    <div style="flex:1;background:rgba(10,191,188,0.07);border:1px solid rgba(10,191,188,0.15);border-radius:6px;padding:6px;">
+                      <div style="color:rgba(255,255,255,0.4);font-size:6px;margin-bottom:2px;">CVR</div>
+                      <div style="color:white;font-size:11px;font-weight:700;">4.8%</div>
+                      <div style="color:#0ABFBC;font-size:6px;">↑ +1.2%</div>
+                    </div>
+                  </div>
+                  <!-- Chart area -->
+                  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:8px;margin-bottom:8px;">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                      <span style="color:rgba(255,255,255,0.4);font-size:7px;">Revenue · 2025</span>
+                      <span style="color:#0ABFBC;font-size:7px;">+23% ↑</span>
+                    </div>
+                    <!-- Area chart simulation -->
+                    <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:50px;">
+                      <defs>
+                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#0ABFBC" stop-opacity="0.4"/>
+                          <stop offset="100%" stop-color="#0ABFBC" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0 40 L20 36 L40 32 L60 28 L80 22 L100 18 L120 14 L140 12 L160 8 L180 5 L200 3 L200 50 L0 50 Z" fill="url(#chartGrad)"/>
+                      <path d="M0 40 L20 36 L40 32 L60 28 L80 22 L100 18 L120 14 L140 12 L160 8 L180 5 L200 3" fill="none" stroke="#0ABFBC" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+                  <!-- Recent users table -->
+                  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:6px;">
+                    <div style="color:rgba(255,255,255,0.4);font-size:7px;margin-bottom:5px;">Recent Signups</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;">
+                      <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div style="display:flex;align-items:center;gap:4px;"><div style="width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#0ABFBC,#006060);"></div><span style="color:rgba(255,255,255,0.6);font-size:7px;">James K.</span></div>
+                        <span style="color:#0ABFBC;font-size:7px;">Pro Plan</span>
+                      </div>
+                      <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div style="display:flex;align-items:center;gap:4px;"><div style="width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#007070,#0ABFBC);"></div><span style="color:rgba(255,255,255,0.6);font-size:7px;">Sarah M.</span></div>
+                        <span style="color:rgba(255,255,255,0.4);font-size:7px;">Starter</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">SaaS Dashboard Design</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Website Design · +48% MRR · 2025</p>
+            </div>
+          </div>
+
+          <!-- BRANDING 2 — Packaging & Brand Collateral -->
+          <div class="gallery-item glass" data-category="branding">
+            <div class="gallery-thumb" style="height:270px;background:linear-gradient(135deg,#0a1a14 0%,#051010 100%);position:relative;overflow:hidden;">
+              <!-- Packaging mockup scene -->
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;">
+                <div style="position:relative;width:100%;max-width:200px;">
+                  <!-- Main packaging box -->
+                  <div style="width:100%;background:linear-gradient(135deg,#0ABFBC 0%,#007070 100%);border-radius:12px;padding:20px;position:relative;box-shadow:0 20px 60px rgba(10,191,188,0.3);">
+                    <!-- Box top face -->
+                    <div style="position:absolute;top:-10px;left:8px;right:-8px;height:10px;background:linear-gradient(135deg,#00E5E5,#009090);border-radius:0 8px 0 0;transform-origin:bottom;transform:skewX(-45deg);"></div>
+                    <!-- Box right face -->
+                    <div style="position:absolute;top:-10px;right:-8px;width:8px;bottom:0;background:linear-gradient(180deg,#006060,#004040);border-radius:0 8px 8px 0;"></div>
+                    <div style="text-align:center;">
+                      <div style="font-size:22px;font-weight:900;color:white;letter-spacing:-1px;text-shadow:0 2px 10px rgba(0,0,0,0.3);">NOUR.</div>
+                      <div style="font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-top:2px;">PREMIUM TEA</div>
+                      <div style="width:40px;height:1px;background:rgba(255,255,255,0.3);margin:8px auto;"></div>
+                      <div style="font-size:7px;color:rgba(255,255,255,0.5);">Est. 2024 · London</div>
+                    </div>
+                  </div>
+                  <!-- Color swatches below -->
+                  <div style="display:flex;gap:4px;margin-top:12px;justify-content:center;">
+                    <div style="width:24px;height:24px;border-radius:50%;background:#0ABFBC;box-shadow:0 2px 8px rgba(10,191,188,0.4);"></div>
+                    <div style="width:24px;height:24px;border-radius:50%;background:#007070;"></div>
+                    <div style="width:24px;height:24px;border-radius:50%;background:#00E5E5;box-shadow:0 2px 8px rgba(0,229,229,0.3);"></div>
+                    <div style="width:24px;height:24px;border-radius:50%;background:#F0FAFA;border:1px solid rgba(10,191,188,0.3);"></div>
+                    <div style="width:24px;height:24px;border-radius:50%;background:#050D0D;"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- F&B badge -->
+              <div style="position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);border:1px solid rgba(10,191,188,0.3);border-radius:6px;padding:3px 8px;">
+                <span style="color:#0ABFBC;font-size:8px;font-weight:600;">F&B · PACKAGING</span>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">NOUR. F&B Rebranding</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Brand Identity · Packaging · 2025</p>
+            </div>
+          </div>
+
+          <!-- SOCIAL 2 — TikTok Viral Campaign Results -->
+          <div class="gallery-item glass" data-category="social">
+            <div class="gallery-thumb" style="height:290px;background:#080810;position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;padding:16px;">
+                <!-- TikTok-style results card -->
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px;margin-bottom:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0ABFBC"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.78a4.85 4.85 0 0 1-1-.09z"/></svg>
+                    <span style="color:white;font-size:11px;font-weight:700;">TikTok Campaign</span>
+                    <div style="margin-left:auto;background:linear-gradient(90deg,#ff0050,#ee1d52);border-radius:6px;padding:2px 8px;">
+                      <span style="color:white;font-size:8px;font-weight:700;">#1 TRENDING</span>
+                    </div>
+                  </div>
+                  <!-- Big number -->
+                  <div style="text-align:center;margin-bottom:12px;">
+                    <div style="font-size:36px;font-weight:900;color:white;line-height:1;">14.2M</div>
+                    <div style="color:rgba(255,255,255,0.5);font-size:10px;margin-top:2px;">Total Views · 30 Days</div>
+                  </div>
+                  <!-- Metrics row -->
+                  <div style="display:flex;justify-content:space-around;border-top:1px solid rgba(255,255,255,0.08);padding-top:10px;">
+                    <div style="text-align:center;">
+                      <div style="color:#0ABFBC;font-weight:700;font-size:13px;">847K</div>
+                      <div style="color:rgba(255,255,255,0.4);font-size:7px;">Likes</div>
+                    </div>
+                    <div style="text-align:center;">
+                      <div style="color:#0ABFBC;font-weight:700;font-size:13px;">42K</div>
+                      <div style="color:rgba(255,255,255,0.4);font-size:7px;">Shares</div>
+                    </div>
+                    <div style="text-align:center;">
+                      <div style="color:#0ABFBC;font-weight:700;font-size:13px;">9.2%</div>
+                      <div style="color:rgba(255,255,255,0.4);font-size:7px;">Conv. Rate</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 7-day chart -->
+                <div style="background:rgba(10,191,188,0.05);border:1px solid rgba(10,191,188,0.12);border-radius:8px;padding:8px;">
+                  <div style="color:rgba(255,255,255,0.4);font-size:7px;margin-bottom:5px;">Daily Views · Last 7 Days</div>
+                  <div style="display:flex;align-items:flex-end;gap:3px;height:32px;">
+                    <div style="flex:1;background:rgba(10,191,188,0.3);border-radius:2px 2px 0 0;height:40%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.4);border-radius:2px 2px 0 0;height:55%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.5);border-radius:2px 2px 0 0;height:70%;"></div>
+                    <div style="flex:1;background:#0ABFBC;border-radius:2px 2px 0 0;height:100%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.7);border-radius:2px 2px 0 0;height:85%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.55);border-radius:2px 2px 0 0;height:72%;"></div>
+                    <div style="flex:1;background:rgba(10,191,188,0.65);border-radius:2px 2px 0 0;height:90%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">TikTok Viral Campaign</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Social Media · 14.2M Views · 2025</p>
+            </div>
+          </div>
+
+          <!-- VIDEO 3 — Testimonial / Documentary Style -->
+          <div class="gallery-item glass" data-category="video">
+            <div class="gallery-thumb" style="height:230px;background:#030C0C;position:relative;overflow:hidden;">
+              <!-- Cinematic documentary frame -->
+              <div style="position:absolute;inset:0;">
+                <!-- Top + bottom bars -->
+                <div style="position:absolute;top:0;left:0;right:0;height:28px;background:#000;z-index:2;"></div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:28px;background:#000;z-index:2;"></div>
+                <!-- Subject / scene -->
+                <div style="position:absolute;top:28px;bottom:28px;left:0;right:0;background:linear-gradient(135deg,#0a1515,#061010);display:flex;align-items:center;justify-content:center;gap:16px;padding:12px;">
+                  <!-- Person mockup -->
+                  <div style="flex-shrink:0;">
+                    <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#0ABFBC,#006060);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 20px rgba(10,191,188,0.3);">👤</div>
+                  </div>
+                  <!-- Quote card -->
+                  <div style="flex:1;">
+                    <div style="color:#0ABFBC;font-size:18px;line-height:1;margin-bottom:4px;">"</div>
+                    <div style="height:5px;background:rgba(255,255,255,0.5);border-radius:2px;margin-bottom:4px;"></div>
+                    <div style="height:5px;background:rgba(255,255,255,0.35);border-radius:2px;margin-bottom:4px;width:85%;"></div>
+                    <div style="height:5px;background:rgba(255,255,255,0.25);border-radius:2px;width:70%;"></div>
+                    <div style="margin-top:8px;color:#0ABFBC;font-size:8px;letter-spacing:1px;">— James Carter, CEO</div>
+                  </div>
+                </div>
+                <!-- Lower third graphic -->
+                <div style="position:absolute;bottom:28px;left:0;right:0;padding:6px 12px;background:linear-gradient(transparent,rgba(0,0,0,0.5));display:flex;align-items:center;gap:8px;">
+                  <div style="width:3px;height:20px;background:#0ABFBC;border-radius:1px;"></div>
+                  <div>
+                    <div style="color:white;font-size:8px;font-weight:700;">James Carter</div>
+                    <div style="color:rgba(255,255,255,0.5);font-size:7px;">CEO, Nexus Ventures</div>
+                  </div>
+                  <div style="margin-left:auto;color:rgba(255,255,255,0.4);font-size:8px;">● REC  0:42</div>
+                </div>
+              </div>
+              <div class="play-btn glass-dark" style="z-index:3;top:50%;transform:translate(-50%,-50%)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">Client Success Documentary</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">AI Video · Testimonial Series · 2025</p>
+            </div>
+          </div>
+
+          <!-- BRANDING 3 — Wellness Full Brand Overhaul -->
+          <div class="gallery-item glass" data-category="branding">
+            <div class="gallery-thumb" style="height:310px;background:#FAFCFC;position:relative;overflow:hidden;">
+              <!-- Brand board with multiple deliverables -->
+              <div style="position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;gap:8px;">
+                <!-- Header label -->
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="color:#050D0D;font-size:10px;font-weight:700;letter-spacing:1px;">BLOOM · WELLNESS</span>
+                  <span style="background:#050D0D;color:#0ABFBC;border-radius:4px;padding:2px 7px;font-size:7px;font-weight:600;">FULL SYSTEM</span>
+                </div>
+                <!-- Logo variants -->
+                <div style="display:flex;gap:6px;">
+                  <div style="flex:2;background:#050D0D;border-radius:8px;padding:12px;display:flex;align-items:center;justify-content:center;gap:8px;">
+                    <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#0ABFBC,#00E5E5);"></div>
+                    <div>
+                      <div style="color:white;font-size:11px;font-weight:800;">BLOOM</div>
+                      <div style="color:#0ABFBC;font-size:7px;letter-spacing:2px;">WELLNESS</div>
+                    </div>
+                  </div>
+                  <div style="flex:1;background:#0ABFBC;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                    <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;font-weight:900;color:#0ABFBC;font-size:14px;">B</div>
+                  </div>
+                </div>
+                <!-- Typography + Colors -->
+                <div style="display:flex;gap:6px;">
+                  <div style="flex:1;background:#f5f5f5;border-radius:6px;padding:8px;">
+                    <div style="font-size:14px;font-weight:800;color:#050D0D;">Aa</div>
+                    <div style="font-size:7px;color:#888;margin-top:2px;">Inter Display</div>
+                    <div style="height:4px;background:#eee;border-radius:2px;margin-top:5px;"></div>
+                    <div style="height:4px;background:#e0;border-radius:2px;margin-top:3px;width:70%;"></div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+                    <div style="flex:1;border-radius:5px;background:#0ABFBC;"></div>
+                    <div style="flex:1;border-radius:5px;background:#050D0D;"></div>
+                    <div style="flex:1;border-radius:5px;background:#F0FAFA;border:1px solid #ddd;"></div>
+                  </div>
+                </div>
+                <!-- Deliverables tags -->
+                <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                  <div style="background:#050D0D;color:#0ABFBC;border-radius:20px;padding:3px 10px;font-size:8px;font-weight:600;">Logo Suite</div>
+                  <div style="background:#050D0D;color:#0ABFBC;border-radius:20px;padding:3px 10px;font-size:8px;font-weight:600;">Packaging</div>
+                  <div style="background:#050D0D;color:#0ABFBC;border-radius:20px;padding:3px 10px;font-size:8px;font-weight:600;">Website</div>
+                  <div style="background:#050D0D;color:#0ABFBC;border-radius:20px;padding:3px 10px;font-size:8px;font-weight:600;">Style Guide</div>
+                </div>
+                <!-- UK badge -->
+                <div style="background:#050D0D;border-radius:6px;padding:6px 10px;display:flex;align-items:center;gap:6px;">
+                  <svg width="14" height="10" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:1px;flex-shrink:0"><rect width="60" height="40" fill="#012169"/><polygon points="0,0 8,0 30,16 52,0 60,0 60,8 38,24 60,40 52,40 30,24 8,40 0,40 0,32 22,16 0,8" fill="white"/><polygon points="0,0 3,0 30,17.5 57,0 60,0 60,3 33,20 60,40 57,40 30,22.5 3,40 0,40 0,37 27,20 0,3" fill="#C8102E"/><rect x="25" y="0" width="10" height="40" fill="white"/><rect x="0" y="15" width="60" height="10" fill="white"/><rect x="27" y="0" width="6" height="40" fill="#C8102E"/><rect x="0" y="17" width="60" height="6" fill="#C8102E"/></svg>
+                  <span style="color:rgba(255,255,255,0.5);font-size:8px;">British Media Partnership · London</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <h4 style="color:white;margin:0 0 4px">BLOOM Wellness Brand Overhaul</h4>
+              <p style="color:rgba(255,255,255,0.8);font-size:14px;margin:0">Brand Identity · Full System · 2025</p>
+            </div>
+          </div>
+
+        </div><!-- /.masonry-grid -->
+
+        <!-- Load More -->
+        <div style="text-align:center;margin-top:48px">
+          <button class="btn-ghost" id="loadMoreBtn">Load More Work</button>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CTA SECTION -->
+    <section class="section section--dark section--pattern" style="text-align:center;">
+      <div class="section-glow section-glow--tl"></div>
+      <div class="container" style="max-width:700px;">
+        <div class="section-label">Work With Us</div>
+        <h2 class="section-heading" style="margin-bottom:20px;">Ready to Create Something <span class="text-gradient">Remarkable?</span></h2>
+        <p class="section-sub" style="color:var(--text-body);margin-bottom:40px;font-size:18px;">Every project in this gallery started with a single conversation. Let's start yours.</p>
+        <a href="contact.html#contact-form" class="btn-primary btn-magnetic" style="font-size:16px;padding:16px 40px;">Start Your Project →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/images/logo.png" alt="Viral Scale AI" height="44"></div>
+          <p class="footer-tagline">AI-powered content & digital agency, in partnership with British Media. Making brands go viral, one piece of content at a time.</p>
+          <div class="footer-uk-badge">
+            <svg width="22" height="15" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;flex-shrink:0">
+              <rect width="60" height="40" fill="#012169"/>
+              <polygon points="0,0 8,0 30,16 52,0 60,0 60,8 38,24 60,40 52,40 30,24 8,40 0,40 0,32 22,16 0,8" fill="white"/>
+              <polygon points="0,0 3,0 30,17.5 57,0 60,0 60,3 33,20 60,40 57,40 30,22.5 3,40 0,40 0,37 27,20 0,3" fill="#C8102E"/>
+              <rect x="25" y="0" width="10" height="40" fill="white"/>
+              <rect x="0" y="15" width="60" height="10" fill="white"/>
+              <rect x="27" y="0" width="6" height="40" fill="#C8102E"/>
+              <rect x="0" y="17" width="60" height="6" fill="#C8102E"/>
+            </svg>
+            British Media Partnership · United Kingdom
+          </div>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Get strategy tips..." aria-label="Email for newsletter">
+            <button type="button">Subscribe</button>
+          </div>
+          <div class="footer-social">
+            <a href="https://instagram.com/viral.scaleai" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#0ABFBC"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.78a4.85 4.85 0 0 1-1-.09z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="#" class="footer-social-icon glass-teal" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/video.html" class="footer-link">AI Video Production</a></li>
+            <li><a href="services/pets.html" class="footer-link">Pet Content</a></li>
+            <li><a href="services/websites.html" class="footer-link">Website Design</a></li>
+            <li><a href="services/social.html" class="footer-link">Social Media</a></li>
+            <li><a href="services/branding.html" class="footer-link">Brand Identity</a></li>
+            <li><a href="services/ads.html" class="footer-link">Paid Ads & Growth</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+          <div style="margin-top:24px">
+            <h4 class="footer-heading">Contact</h4>
+            <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.8">hello@viralscale.ai<br>@viral.scaleai<br>United Kingdom 🇬🇧</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Viral Scale AI. All rights reserved. Proudly partnered with British Media 🇬🇧</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-particles.js"></script>
+
+  <script>
+    // Fluence animations
+    (function() {
+      if (typeof gsap === 'undefined') return;
+
+      // Word-split hero animation
+      var words = document.querySelectorAll('.page-hero .word, .service-hero .word');
+      if (words.length) {
+        gsap.set(words, { opacity: 0, y: 32 });
+        gsap.to(words, { opacity: 1, y: 0, duration: 0.75, stagger: 0.08, ease: 'power3.out', delay: 0.2 });
+      }
+
+      // Subtext fade
+      var subs = document.querySelectorAll('.page-hero p, .service-hero p, .page-hero .section-label, .service-hero .section-label');
+      gsap.set(subs, { opacity: 0, y: 16 });
+      gsap.to(subs, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out', delay: 0.6 });
+
+      // Reveal-up on scroll
+      if (typeof ScrollTrigger !== 'undefined') {
+        document.querySelectorAll('.reveal-up').forEach(function(el) {
+          ScrollTrigger.create({
+            trigger: el,
+            start: 'top 85%',
+            onEnter: function() { el.classList.add('is-visible'); }
+          });
+        });
+
+        // Stagger cards
+        document.querySelectorAll('.grid-3, .services-grid, .gallery-grid, .masonry-grid').forEach(function(grid) {
+          var cards = grid.children;
+          gsap.fromTo(Array.from(cards),
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1, y: 0,
+              duration: 0.7,
+              stagger: 0.1,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: grid, start: 'top 80%' }
+            }
+          );
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    // Gallery filter functionality
+    (function () {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const items = document.querySelectorAll('.gallery-item');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+
+          var filter = tab.getAttribute('data-filter');
+
+          items.forEach(function (item) {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = '';
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(16px)';
+              setTimeout(function () {
+                item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Load more (cosmetic — shows an alert in a real implementation)
+      var loadMoreBtn = document.getElementById('loadMoreBtn');
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+          loadMoreBtn.textContent = 'All projects loaded!';
+          loadMoreBtn.disabled = true;
+          loadMoreBtn.style.opacity = '0.5';
+        });
+      }
+    })();
+  </script>
+  <script src="assets/js/tilt3d.js"></script>
+</body>
+</html>
