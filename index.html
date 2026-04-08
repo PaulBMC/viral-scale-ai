@@ -56,11 +56,7 @@
       cursor: default;
     }
 
-    /* CTA buttons jelly */
-    .hero-cta-row .btn-primary:hover,
-    .hero-cta-row .btn-ghost:hover {
-      animation: jellyBtn 0.65s cubic-bezier(0.36,0.07,0.19,0.97);
-    }
+    /* CTA buttons — no movement on hover */
 
     /* Trust line jelly */
     .hero-trust:hover {
@@ -247,7 +243,7 @@
       transition: opacity 0.2s;
     }
     .btn-primary:hover::after { opacity: 1; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(10,191,188,0.4); }
+    .btn-primary:hover { box-shadow: 0 6px 24px rgba(10,191,188,0.35); }
 
     .btn-ghost {
       display: inline-flex;
@@ -265,7 +261,6 @@
     .btn-ghost:hover {
       background: rgba(10,191,188,0.1);
       border-color: var(--teal-light);
-      transform: translateY(-2px);
     }
 
     /* ── Navigation ── */
@@ -1554,20 +1549,7 @@
             </div>
           </div>
 
-          <!-- Card 2: Pet Content -->
-          <div class="service-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80&fit=crop" alt="Pet Content Creation" loading="lazy">
-            </div>
-            <span class="service-card-badge">Pet Content</span>
-            <div class="service-card-body">
-              <h3>Pet Content Creation</h3>
-              <p>Adorable, shareable pet content that melts hearts and drives massive organic engagement.</p>
-              <a href="services/pets.html" class="service-link">Learn more →</a>
-            </div>
-          </div>
-
-          <!-- Card 3: Website Design -->
+          <!-- Card 2: Web Design -->
           <div class="service-card">
             <div class="service-card-media">
               <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80&fit=crop" alt="Website Design" loading="lazy">
@@ -1580,42 +1562,16 @@
             </div>
           </div>
 
-          <!-- Card 4: Social Media -->
+          <!-- Card 3: Pet Content -->
           <div class="service-card">
             <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80&fit=crop" alt="Social Media Management" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80&fit=crop" alt="Pet Content Creation" loading="lazy">
             </div>
-            <span class="service-card-badge">Social Media</span>
+            <span class="service-card-badge">Pet Content</span>
             <div class="service-card-body">
-              <h3>Social Media Management</h3>
-              <p>Growth across Instagram, TikTok, YouTube, and LinkedIn — all AI-enhanced.</p>
-              <a href="services/social.html" class="service-link">Learn more →</a>
-            </div>
-          </div>
-
-          <!-- Card 5: Brand Identity -->
-          <div class="service-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Brand Identity" loading="lazy">
-            </div>
-            <span class="service-card-badge">Branding</span>
-            <div class="service-card-body">
-              <h3>Brand Identity</h3>
-              <p>Logos, palettes, typography, and full brand systems that make your business unforgettable.</p>
-              <a href="services/branding.html" class="service-link">Learn more →</a>
-            </div>
-          </div>
-
-          <!-- Card 6: Paid Ads -->
-          <div class="service-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="Paid Ads & Growth" loading="lazy">
-            </div>
-            <span class="service-card-badge">Paid Ads</span>
-            <div class="service-card-body">
-              <h3>Paid Ads & Growth</h3>
-              <p>Data-driven Meta and Google ad campaigns with AI optimization that actually converts.</p>
-              <a href="services/ads.html" class="service-link">Learn more →</a>
+              <h3>Pet Content Creation</h3>
+              <p>Adorable, shareable pet content that melts hearts and drives massive organic engagement.</p>
+              <a href="services/pets.html" class="service-link">Learn more →</a>
             </div>
           </div>
 
@@ -1629,13 +1585,6 @@
           </div>
           <div class="service-card" aria-hidden="true">
             <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80&fit=crop" alt="" loading="lazy">
-            </div>
-            <span class="service-card-badge">Pet Content</span>
-            <div class="service-card-body"><h3>Pet Content Creation</h3><p>Adorable, shareable pet content that melts hearts and drives massive organic engagement.</p><a href="services/pets.html" class="service-link">Learn more →</a></div>
-          </div>
-          <div class="service-card" aria-hidden="true">
-            <div class="service-card-media">
               <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80&fit=crop" alt="" loading="lazy">
             </div>
             <span class="service-card-badge">Web Design</span>
@@ -1643,24 +1592,10 @@
           </div>
           <div class="service-card" aria-hidden="true">
             <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80&fit=crop" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80&fit=crop" alt="" loading="lazy">
             </div>
-            <span class="service-card-badge">Social Media</span>
-            <div class="service-card-body"><h3>Social Media Management</h3><p>Growth across Instagram, TikTok, YouTube, and LinkedIn — all AI-enhanced.</p><a href="services/social.html" class="service-link">Learn more →</a></div>
-          </div>
-          <div class="service-card" aria-hidden="true">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="" loading="lazy">
-            </div>
-            <span class="service-card-badge">Branding</span>
-            <div class="service-card-body"><h3>Brand Identity</h3><p>Logos, palettes, typography, and full brand systems that make your business unforgettable.</p><a href="services/branding.html" class="service-link">Learn more →</a></div>
-          </div>
-          <div class="service-card" aria-hidden="true">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="" loading="lazy">
-            </div>
-            <span class="service-card-badge">Paid Ads</span>
-            <div class="service-card-body"><h3>Paid Ads & Growth</h3><p>Data-driven Meta and Google ad campaigns with AI optimization that actually converts.</p><a href="services/ads.html" class="service-link">Learn more →</a></div>
+            <span class="service-card-badge">Pet Content</span>
+            <div class="service-card-body"><h3>Pet Content Creation</h3><p>Adorable, shareable pet content that melts hearts and drives massive organic engagement.</p><a href="services/pets.html" class="service-link">Learn more →</a></div>
           </div>
 
         </div>
@@ -1722,7 +1657,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ABFBC" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
           </div>
           <div class="feature-bento-label">Speed</div>
-          <div class="feature-bento-title">From Brief to Live in 24 Hours</div>
+          <div class="feature-bento-title">Brief to Live in as Little as 5 Days</div>
           <div class="feature-bento-desc">Our AI-assisted pipeline compresses what used to take weeks into a single business day — without sacrificing quality or brand alignment.</div>
         </div>
 

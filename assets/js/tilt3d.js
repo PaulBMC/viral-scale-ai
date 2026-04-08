@@ -1,9 +1,7 @@
-// tilt3d.js — Smooth 3D tilt + depth effect for cards, buttons, and hero
+// tilt3d.js — disabled (caused weird cursor/hover behaviour on all cards & buttons)
 (function () {
   'use strict';
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.innerWidth < 768) return;
+  return;
 
   var LERP = 0.09;
 

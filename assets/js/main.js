@@ -126,19 +126,8 @@
   // ─── 7. MAGNETIC BUTTONS (disabled — CSS hover handles the effect smoothly) ──
   function initMagneticButtons() {}
 
-  // ─── 8. CARD TILT ─────────────────────────────────────────────────────────────
-  function initCardTilt() {
-    if (window.innerWidth <= 768) return;
-    document.querySelectorAll('.service-card, .team-card, .pricing-card').forEach(el => {
-      el.addEventListener('mousemove', e => {
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top)  / r.height - 0.5;
-        gsap.to(el, { rotateY: x * 10, rotateX: -y * 10, duration: 0.4, transformPerspective: 900, ease: 'power2.out' });
-      });
-      el.addEventListener('mouseleave', () => gsap.to(el, { rotateY: 0, rotateX: 0, duration: 0.5, ease: 'power3.out' }));
-    });
-  }
+  // ─── 8. CARD TILT (disabled — causes weird cursor/hover behaviour) ───────────
+  function initCardTilt() {}
 
   // ─── 9. HERO ANIMATIONS (once only — above fold) ──────────────────────────────
   function initHero() {
@@ -185,26 +174,7 @@
     const chevron = hero.querySelector('.scroll-chevron, .scroll-indicator');
     if (chevron) gsap.to(chevron, { y: 8, yoyo: true, repeat: -1, duration: 0.75, ease: 'sine.inOut' });
 
-    // 3D parallax on mouse
-    if (window.innerWidth > 768 && statCards.length) {
-      hero.addEventListener('mousemove', e => {
-        const rect = hero.getBoundingClientRect();
-        const mx = (e.clientX - rect.left) / rect.width  - 0.5;
-        const my = (e.clientY - rect.top)  / rect.height - 0.5;
-        statCards.forEach((card, i) => {
-          const d = 1 + i * 0.4;
-          gsap.to(card, { rotateY: mx * 14 * d, rotateX: -my * 10 * d, transformPerspective: 1000, duration: 0.5, ease: 'power2.out' });
-        });
-        const hc = hero.querySelector('.hero-content');
-        if (hc) gsap.to(hc, { rotateY: mx * 2, rotateX: -my * 1.5, transformPerspective: 1200, duration: 0.8, ease: 'power2.out' });
-      }, { passive: true });
-
-      hero.addEventListener('mouseleave', () => {
-        statCards.forEach(c => gsap.to(c, { rotateY: 0, rotateX: 0, duration: 0.8, ease: 'power3.out' }));
-        const hc = hero.querySelector('.hero-content');
-        if (hc) gsap.to(hc, { rotateY: 0, rotateX: 0, duration: 1, ease: 'power3.out' });
-      });
-    }
+    // 3D parallax disabled — caused weird cursor behaviour
   }
 
   // ─── 10. SECTION HEADING REVEAL (in + out) ────────────────────────────────────
