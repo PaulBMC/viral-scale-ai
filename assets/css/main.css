@@ -3054,10 +3054,6 @@ footer::before {
 /* ─────────────────────────────────────────
    35. CARD HOVER STATES
 ───────────────────────────────────────── */
-.glass {
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-
 .card-hover:hover {
   transform: translateY(-8px);
   box-shadow:
