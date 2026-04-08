@@ -636,8 +636,8 @@ nav.main-nav.scrolled .nav-link:hover {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(10, 191, 188, 0.40);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(10, 191, 188, 0.35);
 }
 
 .btn-primary:hover::after {
@@ -672,8 +672,8 @@ nav.main-nav.scrolled .nav-link:hover {
 .btn-ghost:hover {
   background: rgba(10, 191, 188, 0.18);
   border-color: #0ABFBC;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(10, 191, 188, 0.20);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(10, 191, 188, 0.18);
 }
 
 .btn-ghost:active {

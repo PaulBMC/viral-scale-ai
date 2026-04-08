@@ -123,17 +123,8 @@
     });
   }
 
-  // ─── 7. MAGNETIC BUTTONS ──────────────────────────────────────────────────────
-  function initMagneticButtons() {
-    if (window.innerWidth <= 768) return;
-    document.querySelectorAll('.btn-primary, .btn-magnetic').forEach(el => {
-      el.addEventListener('mousemove', e => {
-        const r = el.getBoundingClientRect();
-        gsap.to(el, { x: (e.clientX - r.left - r.width / 2) * 0.25, y: (e.clientY - r.top - r.height / 2) * 0.25, duration: 0.3 });
-      });
-      el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.4)' }));
-    });
-  }
+  // ─── 7. MAGNETIC BUTTONS (disabled — CSS hover handles the effect smoothly) ──
+  function initMagneticButtons() {}
 
   // ─── 8. CARD TILT ─────────────────────────────────────────────────────────────
   function initCardTilt() {
